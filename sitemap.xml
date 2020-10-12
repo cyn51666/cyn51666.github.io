@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/repository/index.html</loc>
+    <loc>http://example.com/links/index.html</loc>
     
     <lastmod>2020-10-11</lastmod>
     
   </url>
   
   <url>
-    <loc>http://example.com/links/index.html</loc>
+    <loc>http://example.com/repository/index.html</loc>
     
     <lastmod>2020-10-11</lastmod>
     
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2020-10-11</lastmod>
     
@@ -44,7 +44,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2020-10-11</lastmod>
     
@@ -67,7 +67,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2020-10-11</lastmod>
+    <lastmod>2020-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,7 +75,7 @@
   
   <url>
     <loc>http://example.com/tags/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2020-10-11</lastmod>
+    <lastmod>2020-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -84,7 +84,7 @@
   
   <url>
     <loc>http://example.com/categories/hexo/</loc>
-    <lastmod>2020-10-11</lastmod>
+    <lastmod>2020-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
