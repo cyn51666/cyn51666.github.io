@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-12T13:04:34.019Z</updated>
+  <updated>2020-10-12T13:08:28.898Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2020/10/12/%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/"/>
     <id>http://example.com/2020/10/12/%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/</id>
     <published>2020-10-12T12:48:46.000Z</published>
-    <updated>2020-10-12T13:04:34.019Z</updated>
+    <updated>2020-10-12T13:08:28.898Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>方法参数过多的缺点<ol><li>定义和使用不方便，很容易把参数写错</li><li>当对象的属性变化时，方法的参数必须改变</li><li>参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖</li><li>方法参数多，不符合面向对象的低耦合，高内聚的要求</li><li>后台方法的编写依赖数据库的完成</li><li>前台代码实现依赖后台方法的完成，团队中无法并行开发</li></ol></li></ol><hr /><ol start="2"><li>问题思路与解决<ol><li><p>为类的设计提供一个规范，稳定对象的接口</p></li><li><p>不同开发人员只需要按照规范接口即可同步开发</p></li><li><p>问题解决办法</p></li><li><p>使用“实体类”作为方法参数，稳定对外接口</p></li></ol></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>方法参数过多的缺点<ol><li>定义和使用不方便，很容易把参数写错</li><li>当对象的属性变化时，方法的参数必须改变</li><li>参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖</li><li>方法参数多，不符合面向对象的低耦合，高内聚的要求</li><li>后台方法的编写依赖数据库的完成</li><li>前台代码实现依赖后台方法的完成，团队中无法并行开发</li></ol></li></ol><hr /><ol start="2"><li>问题思路与解决<ol><li>为类的设计提供一个规范，稳定对象的接口</li><li>不同开发人员只需要按照规范接口即可同步开发</li></ol></li></ol><hr /><ol start="3"><li>问题解决办法<ol><li>使用“实体类”作为方法参数，稳定对外接口</li></ol></li></ol>]]></content>
     
     
       
