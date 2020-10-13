@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-10-13T00:27:32.484Z</updated>
+  <updated>2020-10-13T00:29:13.795Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>C#实体类在开发中的应用</title>
+    <title>C Sharp实体类在开发中的应用</title>
     <link href="http://example.com/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
     <id>http://example.com/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
     <published>2020-10-12T12:48:48.000Z</published>
-    <updated>2020-10-13T00:27:32.484Z</updated>
+    <updated>2020-10-13T00:29:13.795Z</updated>
     
     <content type="html"><![CDATA[<ol><li>前后台代码混编的缺点<ol><li>程序编写人员必须非常实习后台数据的设计</li><li>业务逻辑复杂时很难查找错误且不利于后期维护</li><li>不符合面向对象的设计思想</li></ol></li></ol><hr /><ol start="2"><li>问题解决<ol><li>将数据展示代码和数据访问代码分离</li><li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li><li>将对该实体操作的方法封装到对应的访问类中</li></ol></li></ol>]]></content>
     
