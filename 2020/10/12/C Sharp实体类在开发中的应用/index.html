@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C Sharp方法参数过多的缺点 | HEXO of YananChen</title>
-  <meta name="description" content="方法参数过多的缺点  定义和使用不方便，很容易把参数写错 当对象的属性变化时，方法的参数必须改变 参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖 方法参数多，不符合面向对象的低耦合，高内聚的要求 后台方法的编写依赖数据库的完成 前台代码实现依赖后台方法的完成，团队中无法并行开发      问题思路与解决  为类的设计提供一个规范，稳定对象的接口 不同开发人员">
+  <title>C#实体类在开发中的应用 | HEXO of YananChen</title>
+  <meta name="description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Sharp方法参数过多的缺点">
-<meta property="og:url" content="http://example.com/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/index.html">
+<meta property="og:title" content="C#实体类在开发中的应用">
+<meta property="og:url" content="http://example.com/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="方法参数过多的缺点  定义和使用不方便，很容易把参数写错 当对象的属性变化时，方法的参数必须改变 参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖 方法参数多，不符合面向对象的低耦合，高内聚的要求 后台方法的编写依赖数据库的完成 前台代码实现依赖后台方法的完成，团队中无法并行开发      问题思路与解决  为类的设计提供一个规范，稳定对象的接口 不同开发人员">
+<meta property="og:description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-12T12:48:46.000Z">
-<meta property="article:modified_time" content="2020-10-13T00:19:54.553Z">
+<meta property="article:published_time" content="2020-10-12T12:48:48.000Z">
+<meta property="article:modified_time" content="2020-10-13T00:23:06.232Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/index.html">
+  <link rel="canonical" href="http://example.com/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -263,7 +263,7 @@
                 <a class="category-link" href="/categories/C/">C#</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/12/%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="title">C#实体类在开发中的应用</a>
+                <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="title">C#实体类在开发中的应用</a>
               </p>
               <p class="item-date">
                 <time datetime="2020-10-12T12:48:48.000Z" itemprop="datePublished">2020-10-12</time>
@@ -278,7 +278,7 @@
                 <a class="category-link" href="/categories/C-Sharp/">C Sharp</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/12/C#%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" class="title">C Sharp对象职责明确原则</a>
+                <a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" class="title">C Sharp对象职责明确原则</a>
               </p>
               <p class="item-date">
                 <time datetime="2020-10-12T12:48:47.000Z" itemprop="datePublished">2020-10-12</time>
@@ -293,7 +293,7 @@
                 <a class="category-link" href="/categories/C-Sharp/">C Sharp</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" class="title">C Sharp方法参数过多的缺点</a>
+                <a href="/2020/10/12/C%20Sharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" class="title">C Sharp方法参数过多的缺点</a>
               </p>
               <p class="item-date">
                 <time datetime="2020-10-12T12:48:46.000Z" itemprop="datePublished">2020-10-12</time>
@@ -344,14 +344,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-C#方法参数过多的缺点" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-C Sharp实体类在开发中的应用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C Sharp方法参数过多的缺点
+      C#实体类在开发中的应用
     </h1>
   
 
@@ -359,14 +359,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" class="article-date">
-	  <time datetime="2020-10-12T12:48:46.000Z" itemprop="datePublished">2020-10-12</time>
+	<a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
+	  <time datetime="2020-10-12T12:48:48.000Z" itemprop="datePublished">2020-10-12</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/C-Sharp/">C Sharp</a>
+    <a class="article-category-link" href="/categories/C/">C#</a>
   </span>
 
         
@@ -385,38 +385,28 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <ol>
-<li>方法参数过多的缺点
+<li>前后台代码混编的缺点
 <ol>
-<li>定义和使用不方便，很容易把参数写错</li>
-<li>当对象的属性变化时，方法的参数必须改变</li>
-<li>参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖</li>
-<li>方法参数多，不符合面向对象的低耦合，高内聚的要求</li>
-<li>后台方法的编写依赖数据库的完成</li>
-<li>前台代码实现依赖后台方法的完成，团队中无法并行开发</li>
+<li>程序编写人员必须非常实习后台数据的设计</li>
+<li>业务逻辑复杂时很难查找错误且不利于后期维护</li>
+<li>不符合面向对象的设计思想</li>
 </ol>
 </li>
 </ol>
 <hr />
 <ol start="2">
-<li>问题思路与解决
+<li>问题解决
 <ol>
-<li>为类的设计提供一个规范，稳定对象的接口</li>
-<li>不同开发人员只需要按照规范接口即可同步开发</li>
-</ol>
-</li>
-</ol>
-<hr />
-<ol start="3">
-<li>问题解决办法
-<ol>
-<li>使用“实体类”作为方法参数，稳定对外接口</li>
+<li>将数据展示代码和数据访问代码分离</li>
+<li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li>
+<li>将对该实体操作的方法封装到对应的访问类中</li>
 </ol>
 </li>
 </ol>
@@ -429,7 +419,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" title="C Sharp方法参数过多的缺点" target="_blank" rel="external">http://example.com/2020/10/12/C#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/</a>
+      <a href="http://example.com/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="C#实体类在开发中的应用" target="_blank" rel="external">http://example.com/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -475,13 +465,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/10/12/C#%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" title="C Sharp对象职责明确原则"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2020/10/12/%E5%86%8D%E5%88%AB%E5%BA%B7%E6%A1%A52/" title="再别康桥2"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" title="C Sharp对象职责明确原则"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
