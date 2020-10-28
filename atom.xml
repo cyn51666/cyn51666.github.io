@@ -6,7 +6,7 @@
   <link href="https://cyn51666.github.io/atom.xml" rel="self"/>
   
   <link href="https://cyn51666.github.io/"/>
-  <updated>2020-10-13T00:29:13.795Z</updated>
+  <updated>2020-10-28T10:18:02.890Z</updated>
   <id>https://cyn51666.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据据库的创建1</title>
+    <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/"/>
+    <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/</id>
+    <published>2020-10-28T12:48:46.000Z</published>
+    <updated>2020-10-28T10:18:02.890Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库的创建1"><a class="markdownIt-Anchor" href="#数据库的创建1"></a> 数据库的创建1</h1><h2 id="1-基本概念"><a class="markdownIt-Anchor" href="#1-基本概念"></a> 1. 基本概念</h2><ol><li><p>创建数据库： create database phpDb</p></li><li><p>删除数据库： drop database phpDb</p></li></ol><hr /><h2 id="2-数据库分类"><a class="markdownIt-Anchor" href="#2-数据库分类"></a> 2. 数据库分类</h2><h3 id="1-系统数据库"><a class="markdownIt-Anchor" href="#1-系统数据库"></a> 1. 系统数据库</h3><p>master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等）</p><p>model: 创建新用户数据库的模板数据库</p><p>msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，SQLSERVER任务等信息</p><p>tempdb: 存有临时对象，例如临时表格和存储过程</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png" alt="20201028175702" /></p><h3 id="2-用户数据库"><a class="markdownIt-Anchor" href="#2-用户数据库"></a> 2. 用户数据库</h3><p>用户数据库的组成: 主数据文件+日志文件</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028180023.png" alt="20201028180023" /></p><hr /><h2 id="3-创建数据库例子"><a class="markdownIt-Anchor" href="#3-创建数据库例子"></a> 3. 创建数据库例子</h2><pre class="highlight"><code class=""> --指向当前要使用的数据库   use master   go   --创建数据库   create database StudentManageDBon primary(--数据库的逻辑名name = 'StudentManageDB_data',--数据库的物理文件名（绝对路径）filename='E:/D/StudentManage_data.mdf',--数据库文件初始大小size=10MB,--数据文件增长量filegrowth=1MB)log on (name = 'StudentManageDB_log',filename = 'StudentManageDB_log.ldf',size=2MB,filegrowth=1MB)go</code></pre><p>primary代表主文件组，主要用于管理磁盘空间，文件组分为主文件组和次文件组，日志文件不属于任何文件组</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;数据库的创建1&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据库的创建1&quot;&gt;&lt;/a&gt; 数据库的创建1&lt;/h1&gt;
+&lt;h2 id=&quot;1-基本概念&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-基本概念&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>C Sharp实体类在开发中的应用</title>
@@ -103,31 +128,6 @@
 &lt;li&gt;当对象的属性变化时，方法的参数必须改变&lt;/li&gt;
 &lt;li&gt;参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖&lt;/li&gt;
 &lt;li&gt;方法参数</summary>
-      
-    
-    
-    
-    <category term="C Sharp" scheme="https://cyn51666.github.io/categories/C-Sharp/"/>
-    
-    
-    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据据库的创建1</title>
-    <link href="https://cyn51666.github.io/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/"/>
-    <id>https://cyn51666.github.io/2020/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/</id>
-    <published>2020-10-12T12:48:46.000Z</published>
-    <updated>2020-10-28T10:10:30.872Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="数据库的创建1"><a class="markdownIt-Anchor" href="#数据库的创建1"></a> 数据库的创建1</h1><h2 id="1-基本概念"><a class="markdownIt-Anchor" href="#1-基本概念"></a> 1. 基本概念</h2><ol><li><p>创建数据库： create database phpDb</p></li><li><p>删除数据库： drop database phpDb</p></li></ol><hr /><h2 id="2-数据库分类"><a class="markdownIt-Anchor" href="#2-数据库分类"></a> 2. 数据库分类</h2><h3 id="1-系统数据库"><a class="markdownIt-Anchor" href="#1-系统数据库"></a> 1. 系统数据库</h3><p>master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等）</p><p>model: 创建新用户数据库的模板数据库</p><p>msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，SQLSERVER任务等信息</p><p>tempdb: 存有临时对象，例如临时表格和存储过程</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png" alt="20201028175702" /></p><h3 id="2-用户数据库"><a class="markdownIt-Anchor" href="#2-用户数据库"></a> 2. 用户数据库</h3><p>用户数据库的组成: 主数据文件+日志文件</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028180023.png" alt="20201028180023" /></p><hr /><h2 id="3-创建数据库例子"><a class="markdownIt-Anchor" href="#3-创建数据库例子"></a> 3. 创建数据库例子</h2><pre class="highlight"><code class=""> --指向当前要使用的数据库   use master   go   --创建数据库   create database StudentManageDBon primary(--数据库的逻辑名name = 'StudentManageDB_data',--数据库的物理文件名（绝对路径）filename='E:/D/StudentManage_data.mdf',--数据库文件初始大小size=10MB,--数据文件增长量filegrowth=1MB)log on (name = 'StudentManageDB_log',filename = 'StudentManageDB_log.ldf',size=2MB,filegrowth=1MB)go</code></pre><p>primary代表主文件组，主要用于管理磁盘空间，文件组分为主文件组和次文件组，日志文件不属于任何文件组</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;数据库的创建1&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据库的创建1&quot;&gt;&lt;/a&gt; 数据库的创建1&lt;/h1&gt;
-&lt;h2 id=&quot;1-基本概念&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-基本概念&quot;&gt;</summary>
       
     
     
