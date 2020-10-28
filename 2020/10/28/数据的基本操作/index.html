@@ -17,21 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C Sharp实体类在开发中的应用 | HEXO of YananChen</title>
-  <meta name="description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+  <title>数据的基本操作 | HEXO of YananChen</title>
+  <meta name="description" content="1. 插入实体（增）   插入实体（数据行语法） insert [into] &lt;表名&gt; values (值列表)   插入实体的SQL语句示例   1insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Sharp实体类在开发中的应用">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:title" content="数据的基本操作">
+<meta property="og:url" content="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+<meta property="og:description" content="1. 插入实体（增）   插入实体（数据行语法） insert [into] &lt;表名&gt; values (值列表)   插入实体的SQL语句示例   1insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-12T12:48:48.000Z">
-<meta property="article:modified_time" content="2020-10-13T00:29:13.795Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213308.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028214314.png">
+<meta property="article:published_time" content="2020-10-28T13:06:51.000Z">
+<meta property="article:modified_time" content="2020-10-28T13:57:51.899Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -344,14 +348,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-C Sharp实体类在开发中的应用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-数据的基本操作" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C Sharp实体类在开发中的应用
+      数据的基本操作
     </h1>
   
 
@@ -359,14 +363,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" class="article-date">
-	  <time datetime="2020-10-12T12:48:48.000Z" itemprop="datePublished">2020-10-12</time>
+	<a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="article-date">
+	  <time datetime="2020-10-28T13:06:51.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/C-Sharp/">C Sharp</a>
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
   </span>
 
         
@@ -385,30 +389,64 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <ol>
-<li>前后台代码混编的缺点
+        <h2 id="1-插入实体增"><a class="markdownIt-Anchor" href="#1-插入实体增"></a> 1. 插入实体（增）</h2>
 <ol>
-<li>程序编写人员必须非常实习后台数据的设计</li>
-<li>业务逻辑复杂时很难查找错误且不利于后期维护</li>
-<li>不符合面向对象的设计思想</li>
+<li>
+<p>插入实体（数据行语法）<br />
+insert [into] &lt;表名&gt; values (值列表)</p>
+</li>
+<li>
+<p>插入实体的SQL语句示例</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;,&#39;男&#39;,&#39;1990-02-07&#39;,21,120223199002078915,&#39;022-888888&#39;,&#39;天津曙光路89号&#39;,4)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>注意事项
+<ol>
+<li>列名个数=对应值个数</li>
+<li>非值类型数据必须放在单引号内</li>
+<li>数据值的类型必须与定义的字段类型一致</li>
 </ol>
 </li>
 </ol>
-<hr />
-<ol start="2">
-<li>问题解决
+<h2 id="2-删除实体删"><a class="markdownIt-Anchor" href="#2-删除实体删"></a> 2. 删除实体（删）</h2>
 <ol>
-<li>将数据展示代码和数据访问代码分离</li>
-<li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li>
-<li>将对该实体操作的方法封装到对应的访问类中</li>
-</ol>
+<li>
+<p>删除数据表的基本语法<br />
+delete from &lt;表名&gt;[where&lt;删除条件&gt;]<br />
+truncate table&lt;表名&gt;<br />
+注意：使用删除语句时，一定要注意where条件配合使用</p>
 </li>
+<li>
+<p>删除实体的SQL语句示例</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from Students where StudentId&#x3D;100002</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png" alt="20201028215730" /></p>
+<h2 id="3-查询实体查"><a class="markdownIt-Anchor" href="#3-查询实体查"></a> 3. 查询实体（查）</h2>
+<ol>
+<li>
+<p>查询基本语法<br />
+select &lt;列名&gt; from &lt;源表名&gt;[where&lt;查询条件&gt;]</p>
+</li>
+<li>
+<p>查询实体的SQL语句示例</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select StudentId,StudentName from Students --查询两个字段  </span><br><span class="line">select * from Students  </span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213308.png" alt="20201028213308" /></p>
+<h2 id="4-更新实体改"><a class="markdownIt-Anchor" href="#4-更新实体改"></a> 4. 更新实体（改）</h2>
+<ol>
+<li>更新实体语法<br />
+update &lt;表名&gt; set &lt;列名 = 更新值&gt;[where&lt;更新条件&gt;]</li>
+<li>更新实体的SQL语句示例<br />
+<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028214314.png" alt="20201028214314" /></li>
 </ol>
 
       
@@ -419,7 +457,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="C Sharp实体类在开发中的应用" target="_blank" rel="external">https://cyn51666.github.io/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</a>
+      <a href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="数据的基本操作" target="_blank" rel="external">https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -466,12 +504,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/" title="数据据库的创建1"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/10/28/SQL%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" title="数据库中的运算符"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" title="C Sharp对象职责明确原则"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/" title="数据表的创建"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
