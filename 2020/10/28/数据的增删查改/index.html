@@ -17,29 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>SQLServer数据类型 | HEXO of YananChen</title>
-  <meta name="description" content="SQLServer数据类型  文本类型  char:固定长度的非Unicode字符数据，最大长度为8000个字符 vchar:可变长度的非Unicode数据，最大长度为8000个字符 text:存储长文本信息，最大长度为2^31-1(2147483647)个字符 nchar:固定长度的Unicode数据，最大长度为4000个字符 nvchar:固定长度的Unicode数据，最大长度为4000个字">
+  <title>数据的基本操作 | HEXO of YananChen</title>
+  <meta name="description" content="1. 插入实体（增）   插入实体（数据行语法） insert [into] &lt;表名&gt; values (值列表)   插入实体的SQL语句示例   1insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQLServer数据类型">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:title" content="数据的基本操作">
+<meta property="og:url" content="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="SQLServer数据类型  文本类型  char:固定长度的非Unicode字符数据，最大长度为8000个字符 vchar:可变长度的非Unicode数据，最大长度为8000个字符 text:存储长文本信息，最大长度为2^31-1(2147483647)个字符 nchar:固定长度的Unicode数据，最大长度为4000个字符 nvchar:固定长度的Unicode数据，最大长度为4000个字">
+<meta property="og:description" content="1. 插入实体（增）   插入实体（数据行语法） insert [into] &lt;表名&gt; values (值列表)   插入实体的SQL语句示例   1insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png">
-<meta property="article:published_time" content="2020-10-28T11:55:50.000Z">
-<meta property="article:modified_time" content="2020-10-28T13:10:57.348Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213308.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028214314.png">
+<meta property="article:published_time" content="2020-10-28T13:06:51.000Z">
+<meta property="article:modified_time" content="2020-10-29T01:51:36.145Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -223,7 +219,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-Sharp/">C Sharp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-Sharp/">C Sharp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -233,7 +229,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">9</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -252,7 +248,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">12</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">14</span></li></ul>
     </div>
   </div>
 
@@ -268,10 +264,25 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/SQL%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" class="title">数据库中的运算符</a>
+                <a href="/2020/10/29/sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" class="title">sql语句的执行顺序</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-29T01:11:51.000Z" itemprop="datePublished">2020-10-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/10/28/sql%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" class="title">sql中的运算符</a>
               </p>
               <p class="item-date">
                 <time datetime="2020-10-28T13:35:51.000Z" itemprop="datePublished">2020-10-28</time>
@@ -283,7 +294,22 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/" class="title">数据的基本操作</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-28T13:06:51.000Z" itemprop="datePublished">2020-10-28</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
                 <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="title">数据的基本操作</a>
@@ -298,43 +324,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
                 <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/" class="title">数据表的创建</a>
               </p>
               <p class="item-date">
                 <time datetime="2020-10-28T12:00:51.000Z" itemprop="datePublished">2020-10-28</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="title">SQLServer数据类型</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-10-28T11:55:50.000Z" itemprop="datePublished">2020-10-28</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" class="title">数据据库的创建2</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-10-28T11:49:46.000Z" itemprop="datePublished">2020-10-28</time>
               </p>
             </div>
           </li>
@@ -352,14 +348,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-SQLServer数据类型" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-数据的增删查改" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      SQLServer数据类型
+      数据的基本操作
     </h1>
   
 
@@ -367,14 +363,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
-	  <time datetime="2020-10-28T11:55:50.000Z" itemprop="datePublished">2020-10-28</time>
+	<a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/" class="article-date">
+	  <time datetime="2020-10-28T13:06:51.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    <a class="article-category-link" href="/categories/SQL-Server/">SQL Server</a>
   </span>
 
         
@@ -393,66 +389,64 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="sqlserver数据类型"><a class="markdownIt-Anchor" href="#sqlserver数据类型"></a> SQLServer数据类型</h2>
-<ol>
-<li>文本类型
-<ol>
-<li>char:固定长度的非Unicode字符数据，最大长度为8000个字符</li>
-<li>vchar:可变长度的非Unicode数据，最大长度为8000个字符</li>
-<li>text:存储长文本信息，最大长度为2^31-1(2147483647)个字符</li>
-<li>nchar:固定长度的Unicode数据，最大长度为4000个字符</li>
-<li>nvchar:固定长度的Unicode数据，最大长度为4000个字符</li>
-<li>text:存储可变长文本信息，最大长度为2^30-1个字符</li>
-</ol>
-</li>
-</ol>
-<h3 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意：</h3>
-<pre><code>1. Unicode是国际组织制定的可以容纳世界上所有文字和字符的编码方案
-2. 带n的数据类型长度是不带n的两倍，比如nchar(1)和char(2)长度相同
-</code></pre>
-<ol start="2">
-<li>
-<p>值类型</p>
+        <h2 id="1-插入实体增"><a class="markdownIt-Anchor" href="#1-插入实体增"></a> 1. 插入实体（增）</h2>
 <ol>
 <li>
-<p>整数类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png" alt="20201028192808" /></p>
+<p>插入实体（数据行语法）<br />
+insert [into] &lt;表名&gt; values (值列表)</p>
 </li>
 <li>
-<p>精确数字类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png" alt="20201028192848" /></p>
-</li>
-<li>
-<p>近似数字（浮点）类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png" alt="20201028192911" /></p>
+<p>插入实体的SQL语句示例</p>
 </li>
 </ol>
-</li>
-<li>
-<p>日期类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png" alt="20201028193316" /></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;,&#39;男&#39;,&#39;1990-02-07&#39;,21,120223199002078915,&#39;022-888888&#39;,&#39;天津曙光路89号&#39;,4)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>注意事项
+<ol>
+<li>列名个数=对应值个数</li>
+<li>非值类型数据必须放在单引号内</li>
+<li>数据值的类型必须与定义的字段类型一致</li>
+</ol>
 </li>
 </ol>
-<p>注意：日期在使用时要用单引号（’’）括起来，建议都使用datetime</p>
-<ol start="4">
+<h2 id="2-删除实体删"><a class="markdownIt-Anchor" href="#2-删除实体删"></a> 2. 删除实体（删）</h2>
+<ol>
 <li>
-<p>货币类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png" alt="20201028193728" /></p>
+<p>删除数据表的基本语法<br />
+delete from &lt;表名&gt;[where&lt;删除条件&gt;]<br />
+truncate table&lt;表名&gt;<br />
+注意：使用删除语句时，一定要注意where条件配合使用</p>
 </li>
 <li>
-<p>位类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png" alt="20201028193759" /></p>
+<p>删除实体的SQL语句示例</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from Students where StudentId&#x3D;100002</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png" alt="20201028215730" /></p>
+<h2 id="3-查询实体查"><a class="markdownIt-Anchor" href="#3-查询实体查"></a> 3. 查询实体（查）</h2>
+<ol>
+<li>
+<p>查询基本语法<br />
+select &lt;列名&gt; from &lt;源表名&gt;[where&lt;查询条件&gt;]</p>
 </li>
 <li>
-<p>二进制类型<br />
-<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png" alt="20201028193835" /></p>
+<p>查询实体的SQL语句示例</p>
 </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select StudentId,StudentName from Students --查询两个字段  </span><br><span class="line">select * from Students  </span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213308.png" alt="20201028213308" /></p>
+<h2 id="4-更新实体改"><a class="markdownIt-Anchor" href="#4-更新实体改"></a> 4. 更新实体（改）</h2>
+<ol>
+<li>更新实体语法<br />
+update &lt;表名&gt; set &lt;列名 = 更新值&gt;[where&lt;更新条件&gt;]</li>
+<li>更新实体的SQL语句示例<br />
+<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028214314.png" alt="20201028214314" /></li>
 </ol>
 
       
@@ -463,7 +457,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="SQLServer数据类型" target="_blank" rel="external">https://cyn51666.github.io/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</a>
+      <a href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/" title="数据的基本操作" target="_blank" rel="external">https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -510,12 +504,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/" title="数据表的创建"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/10/28/sql%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" title="sql中的运算符"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" title="数据据库的创建2"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="数据的基本操作"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

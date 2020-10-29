@@ -6,7 +6,7 @@
   <link href="https://cyn51666.github.io/atom.xml" rel="self"/>
   
   <link href="https://cyn51666.github.io/"/>
-  <updated>2020-10-28T13:36:02.955Z</updated>
+  <updated>2020-10-29T01:51:58.244Z</updated>
   <id>https://cyn51666.github.io/</id>
   
   <author>
@@ -17,24 +17,54 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数据库中的运算符</title>
-    <link href="https://cyn51666.github.io/2020/10/28/SQL%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>https://cyn51666.github.io/2020/10/28/SQL%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
+    <title>sql语句的执行顺序</title>
+    <link href="https://cyn51666.github.io/2020/10/29/sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/"/>
+    <id>https://cyn51666.github.io/2020/10/29/sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/</id>
+    <published>2020-10-29T01:11:51.000Z</published>
+    <updated>2020-10-29T01:51:58.244Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="sql语句的执行顺序为"><a class="markdownIt-Anchor" href="#sql语句的执行顺序为"></a> sql语句的执行顺序为</h2><p>–第一步：执行FROM</p><p>–第二步：WHERE条件过滤</p><p>–第三步：GROUP BY分组</p><p>–第四步：执行SELECT投影列，聚集函数例如count(*)</p><p>–第五步：HAVING条件过滤</p><p>–第六步：执行ORDER BY 排序</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;sql语句的执行顺序为&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sql语句的执行顺序为&quot;&gt;&lt;/a&gt; sql语句的执行顺序为&lt;/h2&gt;
+&lt;p&gt;–第一步：执行FROM&lt;/p&gt;
+&lt;p&gt;–第二步：WHERE条件过滤&lt;/p&gt;
+&lt;p&gt;–第三步</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sql中的运算符</title>
+    <link href="https://cyn51666.github.io/2020/10/28/sql%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://cyn51666.github.io/2020/10/28/sql%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
     <published>2020-10-28T13:35:51.000Z</published>
-    <updated>2020-10-28T13:36:02.955Z</updated>
+    <updated>2020-10-29T01:52:03.825Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="数据库常用的运算符"><a class="markdownIt-Anchor" href="#数据库常用的运算符"></a> 数据库常用的运算符</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="在sql语言中常用的运算符有以下几种"><a class="markdownIt-Anchor" href="#在sql语言中常用的运算符有以下几种"></a> 在sql语言中常用的运算符有以下几种：</h2><ol><li><p>算术运算符<br />+（加）、-（减）、*（乘）、/（除）、%（取模，也就是商）</p></li><li><p>赋值运算符<br />“=”（等号）表示赋值，例如：Name=‘王华’</p></li><li><p>比较运算符<br />==等于<br />&gt;大于<br />&lt;小于<br />&lt;&gt;不等于<br />&gt;=大于等于<br />&lt;=小于等于<br />!=不等于</p></li><li><p>逻辑运算符<br />逻辑运算符用来对某个条件进行判断，以获得判断的真假，返回带有true或false值得布尔数据类型</p><p>AND当且仅当两个布尔表达式都为true时，返回true</p><p>OR当且仅当两个布尔表达式都为false时，返回false</p><p>NOT对布尔表达式的值取反，优先级别最高</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select StudentId,StudentName,Gender from Students where Age &gt;&#x3D; 22</span><br></pre></td></tr></table></figure><h2 id="数据库常用的运算符的优先级"><a class="markdownIt-Anchor" href="#数据库常用的运算符的优先级"></a> 数据库常用的运算符的优先级</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213617.png" alt="20201028213617" /></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;数据库常用的运算符&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据库常用的运算符&quot;&gt;&lt;/a&gt; 数据库常用的运算符&lt;/h2&gt;
-</summary>
+    <summary type="html">&lt;h2 id=&quot;在sql语言中常用的运算符有以下几种&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#在sql语言中常用的运算符有以下几种&quot;&gt;&lt;/a&gt; 在sql语言中常用的运算符有以下几种：&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;算术运算符&lt;br /&gt;
++</summary>
       
     
     
     
-    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -43,10 +73,10 @@
   
   <entry>
     <title>数据的基本操作</title>
-    <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</id>
+    <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/"/>
+    <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/</id>
     <published>2020-10-28T13:06:51.000Z</published>
-    <updated>2020-10-28T13:57:51.899Z</updated>
+    <updated>2020-10-29T01:51:36.145Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-插入实体增"><a class="markdownIt-Anchor" href="#1-插入实体增"></a> 1. 插入实体（增）</h2><ol><li><p>插入实体（数据行语法）<br />insert [into] &lt;表名&gt; values (值列表)</p></li><li><p>插入实体的SQL语句示例</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;马小南&#39;,&#39;男&#39;,&#39;1990-02-07&#39;,21,120223199002078915,&#39;022-888888&#39;,&#39;天津曙光路89号&#39;,4)</span><br></pre></td></tr></table></figure><ol start="3"><li>注意事项<ol><li>列名个数=对应值个数</li><li>非值类型数据必须放在单引号内</li><li>数据值的类型必须与定义的字段类型一致</li></ol></li></ol><h2 id="2-删除实体删"><a class="markdownIt-Anchor" href="#2-删除实体删"></a> 2. 删除实体（删）</h2><ol><li><p>删除数据表的基本语法<br />delete from &lt;表名&gt;[where&lt;删除条件&gt;]<br />truncate table&lt;表名&gt;<br />注意：使用删除语句时，一定要注意where条件配合使用</p></li><li><p>删除实体的SQL语句示例</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from Students where StudentId&#x3D;100002</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png" alt="20201028215730" /></p><h2 id="3-查询实体查"><a class="markdownIt-Anchor" href="#3-查询实体查"></a> 3. 查询实体（查）</h2><ol><li><p>查询基本语法<br />select &lt;列名&gt; from &lt;源表名&gt;[where&lt;查询条件&gt;]</p></li><li><p>查询实体的SQL语句示例</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select StudentId,StudentName from Students --查询两个字段  </span><br><span class="line">select * from Students  </span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213308.png" alt="20201028213308" /></p><h2 id="4-更新实体改"><a class="markdownIt-Anchor" href="#4-更新实体改"></a> 4. 更新实体（改）</h2><ol><li>更新实体语法<br />update &lt;表名&gt; set &lt;列名 = 更新值&gt;[where&lt;更新条件&gt;]</li><li>更新实体的SQL语句示例<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028214314.png" alt="20201028214314" /></li></ol>]]></content>
     
@@ -62,7 +92,35 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据的基本操作</title>
+    <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</id>
+    <published>2020-10-28T13:06:51.000Z</published>
+    <updated>2020-10-29T01:51:31.499Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-插入实体增"><a class="markdownIt-Anchor" href="#1-插入实体增"></a> 1. 插入实体（增）</h2><ol><li><p>插入实体（数据行语法）<br />insert [into] &lt;表名&gt; values (值列表)</p></li><li><p>插入实体的SQL语句示例</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,   </span><br><span class="line">StudentAddress,ClassId)values(&#39;马小南&#39;,&#39;男&#39;,&#39;1990-02-07&#39;,21,120223199002078915,&#39;022-888888&#39;,&#39;天津曙光路89号&#39;,4)</span><br></pre></td></tr></table></figure><ol start="3"><li>注意事项<ol><li>列名个数=对应值个数</li><li>非值类型数据必须放在单引号内</li><li>数据值的类型必须与定义的字段类型一致</li></ol></li></ol><h2 id="2-删除实体删"><a class="markdownIt-Anchor" href="#2-删除实体删"></a> 2. 删除实体（删）</h2><ol><li><p>删除数据表的基本语法<br />delete from &lt;表名&gt;[where&lt;删除条件&gt;]<br />truncate table&lt;表名&gt;<br />注意：使用删除语句时，一定要注意where条件配合使用</p></li><li><p>删除实体的SQL语句示例</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from Students where StudentId&#x3D;100002</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028215730.png" alt="20201028215730" /></p><h2 id="3-查询实体查"><a class="markdownIt-Anchor" href="#3-查询实体查"></a> 3. 查询实体（查）</h2><ol><li><p>查询基本语法<br />select &lt;列名&gt; from &lt;源表名&gt;[where&lt;查询条件&gt;]</p></li><li><p>查询实体的SQL语句示例</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select StudentId,StudentName from Students --查询两个字段  </span><br><span class="line">select * from Students  </span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213308.png" alt="20201028213308" /></p><h2 id="4-更新实体改"><a class="markdownIt-Anchor" href="#4-更新实体改"></a> 4. 更新实体（改）</h2><ol><li>更新实体语法<br />update &lt;表名&gt; set &lt;列名 = 更新值&gt;[where&lt;更新条件&gt;]</li><li>更新实体的SQL语句示例<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028214314.png" alt="20201028214314" /></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-插入实体增&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-插入实体增&quot;&gt;&lt;/a&gt; 1. 插入实体（增）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;插入实体（数据行语法）&lt;br /&gt;
+insert [into] &amp;lt;表名&amp;gt; v</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -74,7 +132,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/"/>
     <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/</id>
     <published>2020-10-28T12:00:51.000Z</published>
-    <updated>2020-10-28T13:04:41.252Z</updated>
+    <updated>2020-10-29T01:51:24.680Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-建表的基本语法"><a class="markdownIt-Anchor" href="#1-建表的基本语法"></a> 1. 建表的基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table 表名</span><br><span class="line">(</span><br><span class="line">    字段1 数据类型 列的特征,</span><br><span class="line">    字段2 数据类型 列的特征,</span><br><span class="line">    ...</span><br><span class="line">)</span><br><span class="line">go</span><br></pre></td></tr></table></figure><h2 id="2-列的特征包含的内容"><a class="markdownIt-Anchor" href="#2-列的特征包含的内容"></a> 2. 列的特征包含的内容</h2><ol><li>是否为空（NULL）: 在输入数据时，数据的列允许为空时，可以不输入数据，否则必须输入。列是否为空要根据数据库的设计具体要求决定，对关键列必须禁止为空</li><li>是否标识列（自动编号）</li><li>是否有默认值：如果数据表的某列在用户不输入数据时，希望提供一个默认的内容，比如：用户不输入学员地址，则默认地址不详</li><li>是否为主键：主键是实体的唯一标识，保证实体不被重复。</li></ol><h2 id="3-实践"><a class="markdownIt-Anchor" href="#3-实践"></a> 3. 实践</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">use master</span><br><span class="line">go</span><br><span class="line">--判断当前数据库是否存在</span><br><span class="line">if exists(select * from sysdatabases where name&#x3D;&#39;StudentmanManageDB&#39;)</span><br><span class="line">drop database StudentManageDB</span><br><span class="line">go</span><br><span class="line">--创建数据表</span><br><span class="line">create database StudentManageDB</span><br><span class="line">on primary</span><br><span class="line">(</span><br><span class="line">    name&#x3D;&#39;StudentManageDB&#39;,--数据库名</span><br><span class="line">    filename&#x3D;E:\DB\StudentManageDB.mdf,--文件名</span><br><span class="line">    size&#x3D;10MB,--初始数据库的大小</span><br><span class="line">    filegrowth&#x3D;5MB--数据自动增长</span><br><span class="line">)</span><br><span class="line">log on </span><br><span class="line">(</span><br><span class="line">    name&#x3D;&#39;StudentManageDB_log&#39;,--数据库名</span><br><span class="line">    filename&#x3D;E:\DB\StudentManageDB_log.ldf,--文件名</span><br><span class="line">    size&#x3D;10MB,--初始数据库的大小</span><br><span class="line">    filegrowth&#x3D;5MB--数据自动增长</span><br><span class="line">)</span><br><span class="line">--创建数据表</span><br><span class="line">use StudentManageDB</span><br><span class="line">go</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;Sududents&#39;)</span><br><span class="line">drop table Students</span><br><span class="line">go </span><br><span class="line">create table Students</span><br><span class="line">(</span><br><span class="line">    StudentId int identity(10000,1) ,--学号设置为标识列，从10000开始每次自动增长1</span><br><span class="line">    StudentName varchar(20) not null ,--姓名</span><br><span class="line">    Gender char(2) not null,--性别</span><br><span class="line">    Birthday datetime not null,--出生日期</span><br><span class="line">    StudentIdNo numeric(18,0) not null,--身份证号</span><br><span class="line">    Age int not null,--年龄</span><br><span class="line">    PhoneNumber varchar(50),</span><br><span class="line">    StudentAddress varchar(500),--电话号码</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建班级表</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;SududentClass&#39;)</span><br><span class="line">drop table StudentClass</span><br><span class="line">go </span><br><span class="line">create table StudentClass</span><br><span class="line">(</span><br><span class="line">    ClassId int primary key,--班级编号，主键，直接定义</span><br><span class="line">    ClassName vchar(20) not null,</span><br><span class="line">)</span><br><span class="line">--创建成绩表</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;ScoreList&#39;)</span><br><span class="line">drop table ScoreList</span><br><span class="line">go </span><br><span class="line">create table ScoreList</span><br><span class="line">(</span><br><span class="line">    Id int identity(1,1),</span><br><span class="line">    StudentId int not null,--学号，外键</span><br><span class="line">    CSharp int null, --CSharp成绩允许为空</span><br><span class="line">    SQL int null,</span><br><span class="line">    UpdateTime datetime not null,--更新时间</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建管理员数据表</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;Admins&#39;)</span><br><span class="line">drop table Admins</span><br><span class="line">go </span><br><span class="line">create table Admins</span><br><span class="line">(</span><br><span class="line">    LoginId int identity(1000,1) primary key,</span><br><span class="line">    LoginPwd varchar(20) not null,--登录密码</span><br><span class="line">    AdminName varchar(20) not null</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="4-批处理语句-go"><a class="markdownIt-Anchor" href="#4-批处理语句-go"></a> 4. 批处理语句 go</h2><ol><li>go是批处理的标志，表示SQLServer将这些SQL语句编译为一个执行单元，提高执行效率。一般是将一些逻辑相关的业务操作语句放在同一批中，这完全由业务需求和代码编写者决定</li><li>go是SQLServer的批处理命令，只有代码编辑器才能识别并处理，编辑其他应用程序就不能使用该命令。由于每个批处理之间是独立的，因此，在一个批处理出现错误时，并不会影响其他批处理中的SQL代码的运行</li></ol>]]></content>
     
@@ -87,7 +145,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -95,27 +153,24 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
   </entry>
   
   <entry>
-    <title>SQLServer数据类型</title>
-    <link href="https://cyn51666.github.io/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://cyn51666.github.io/2020/10/28/SQLServer%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <title>sql数据类型</title>
+    <link href="https://cyn51666.github.io/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://cyn51666.github.io/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
     <published>2020-10-28T11:55:50.000Z</published>
-    <updated>2020-10-28T13:10:57.348Z</updated>
+    <updated>2020-10-29T01:51:52.414Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="sqlserver数据类型"><a class="markdownIt-Anchor" href="#sqlserver数据类型"></a> SQLServer数据类型</h2><ol><li>文本类型<ol><li>char:固定长度的非Unicode字符数据，最大长度为8000个字符</li><li>vchar:可变长度的非Unicode数据，最大长度为8000个字符</li><li>text:存储长文本信息，最大长度为2^31-1(2147483647)个字符</li><li>nchar:固定长度的Unicode数据，最大长度为4000个字符</li><li>nvchar:固定长度的Unicode数据，最大长度为4000个字符</li><li>text:存储可变长文本信息，最大长度为2^30-1个字符</li></ol></li></ol><h3 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意：</h3><pre><code>1. Unicode是国际组织制定的可以容纳世界上所有文字和字符的编码方案2. 带n的数据类型长度是不带n的两倍，比如nchar(1)和char(2)长度相同</code></pre><ol start="2"><li><p>值类型</p><ol><li><p>整数类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png" alt="20201028192808" /></p></li><li><p>精确数字类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png" alt="20201028192848" /></p></li><li><p>近似数字（浮点）类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png" alt="20201028192911" /></p></li></ol></li><li><p>日期类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png" alt="20201028193316" /></p></li></ol><p>注意：日期在使用时要用单引号（’’）括起来，建议都使用datetime</p><ol start="4"><li><p>货币类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png" alt="20201028193728" /></p></li><li><p>位类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png" alt="20201028193759" /></p></li><li><p>二进制类型<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png" alt="20201028193835" /></p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="sqlserver数据类型"><a class="markdownIt-Anchor" href="#sqlserver数据类型"></a> SQLServer数据类型</h2><h3 id="1-文本类型"><a class="markdownIt-Anchor" href="#1-文本类型"></a> 1. 文本类型</h3><pre><code>1. char:固定长度的非Unicode字符数据，最大长度为8000个字符2. vchar:可变长度的非Unicode数据，最大长度为8000个字符3. text:存储长文本信息，最大长度为2^31-1(2147483647)个字符4. nchar:固定长度的Unicode数据，最大长度为4000个字符5. nvchar:固定长度的Unicode数据，最大长度为4000个字符6. text:存储可变长文本信息，最大长度为2^30-1个字符  </code></pre><p>注意：<br />1. Unicode是国际组织制定的可以容纳世界上所有文字和字符的编码方案<br />2. 带n的数据类型长度是不带n的两倍，比如nchar(1)和char(2)长度相同</p><h3 id="2-值类型"><a class="markdownIt-Anchor" href="#2-值类型"></a> 2. 值类型</h3><pre><code>1. 整数类型![20201028192808](https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png)2. 精确数字类型![20201028192848](https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png)3. 近似数字（浮点）类型![20201028192911](https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png)</code></pre><h3 id="3-日期类型"><a class="markdownIt-Anchor" href="#3-日期类型"></a> 3. 日期类型</h3><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png" alt="20201028193316" /></p><p>注意：日期在使用时要用单引号（’’）括起来，建议都使用datetime</p><h3 id="4-货币类型"><a class="markdownIt-Anchor" href="#4-货币类型"></a> 4. 货币类型</h3><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png" alt="20201028193728" /></p><h3 id="5-位类型"><a class="markdownIt-Anchor" href="#5-位类型"></a> 5. 位类型</h3><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png" alt="20201028193759" /></p><h3 id="6-二进制类型"><a class="markdownIt-Anchor" href="#6-二进制类型"></a> 6. 二进制类型</h3><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png" alt="20201028193835" /></p>]]></content>
     
     
       
       
     <summary type="html">&lt;h2 id=&quot;sqlserver数据类型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sqlserver数据类型&quot;&gt;&lt;/a&gt; SQLServer数据类型&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;文本类型
-&lt;ol&gt;
-&lt;li&gt;char:固定长度的非Unicode字</summary>
+&lt;h3 id=&quot;1-文本类型&quot;&gt;&lt;a class=&quot;markdownIt-Ancho</summary>
       
     
     
     
-    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -127,7 +182,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/"/>
     <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/</id>
     <published>2020-10-28T11:49:46.000Z</published>
-    <updated>2020-10-28T11:44:47.746Z</updated>
+    <updated>2020-10-29T01:50:57.518Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-创建多个数据文件和日志文件"><a class="markdownIt-Anchor" href="#1-创建多个数据文件和日志文件"></a> 1. 创建多个数据文件和日志文件</h2><p>创建多个数据文件和日志文件</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028184102.png" alt="20201028184102" /></p><p>注意：创建多个数据文件和日志文件要用逗号分开，数据库文件名不能重复</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">use master</span><br><span class="line">go</span><br><span class="line">--判断当前数据库是否存在</span><br><span class="line">if exists(select * from sysdatabases where name&#x3D;&#39;StudentmanManageDB&#39;)</span><br><span class="line">drop database StudentManageDB</span><br><span class="line">go</span><br><span class="line">create database StudentManageDB</span><br><span class="line">on primary</span><br><span class="line">(</span><br><span class="line">    name&#x3D;&#39;StudentManageDB&#39;,--数据库名</span><br><span class="line">    filename&#x3D;E:\DB\StudentManageDB.mdf,--文件名</span><br><span class="line">    size&#x3D;10MB,--初始数据库的大小</span><br><span class="line">    filegrowth&#x3D;5MB--数据自动增长</span><br><span class="line">)</span><br><span class="line">log on </span><br><span class="line">(</span><br><span class="line">    name&#x3D;&#39;StudentManageDB_log&#39;,--数据库名</span><br><span class="line">    filename&#x3D;E:\DB\StudentManageDB_log.ldf,--文件名</span><br><span class="line">    size&#x3D;10MB,--初始数据库的大小</span><br><span class="line">    filegrowth&#x3D;5MB--数据自动增长</span><br><span class="line">)</span><br></pre></td></tr></table></figure><h2 id="2-分离与附加数据库"><a class="markdownIt-Anchor" href="#2-分离与附加数据库"></a> 2. 分离与附加数据库</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028190653.png" alt="20201028190653" /></p>]]></content>
     
@@ -141,7 +196,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -153,9 +208,9 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     <link href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/"/>
     <id>https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/</id>
     <published>2020-10-28T11:48:46.000Z</published>
-    <updated>2020-10-28T11:44:27.838Z</updated>
+    <updated>2020-10-29T01:50:31.916Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="数据库的创建1"><a class="markdownIt-Anchor" href="#数据库的创建1"></a> 数据库的创建1</h1><h2 id="1-基本概念"><a class="markdownIt-Anchor" href="#1-基本概念"></a> 1. 基本概念</h2><ol><li><p>创建数据库： create database phpDb</p></li><li><p>删除数据库： drop database phpDb</p></li></ol><hr /><h2 id="2-数据库分类"><a class="markdownIt-Anchor" href="#2-数据库分类"></a> 2. 数据库分类</h2><h3 id="1-系统数据库"><a class="markdownIt-Anchor" href="#1-系统数据库"></a> 1. 系统数据库</h3><p>master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等）</p><p>model: 创建新用户数据库的模板数据库</p><p>msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，SQLSERVER任务等信息</p><p>tempdb: 存有临时对象，例如临时表格和存储过程</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png" alt="20201028175702" /></p><h3 id="2-用户数据库"><a class="markdownIt-Anchor" href="#2-用户数据库"></a> 2. 用户数据库</h3><p>用户数据库的组成: 主数据文件+日志文件</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028180023.png" alt="20201028180023" /></p><hr /><h2 id="3-创建数据库例子"><a class="markdownIt-Anchor" href="#3-创建数据库例子"></a> 3. 创建数据库例子</h2><pre class="highlight"><code class=""> --指向当前要使用的数据库   use master   go   --创建数据库   create database StudentManageDBon primary(--数据库的逻辑名name = 'StudentManageDB_data',--数据库的物理文件名（绝对路径）filename='E:/D/StudentManage_data.mdf',--数据库文件初始大小size=10MB,--数据文件增长量filegrowth=1MB)log on (name = 'StudentManageDB_log',filename = 'StudentManageDB_log.ldf',size=2MB,filegrowth=1MB)go</code></pre><p>primary代表主文件组，主要用于管理磁盘空间，文件组分为主文件组和次文件组，日志文件不属于任何文件组</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="数据库的创建1"><a class="markdownIt-Anchor" href="#数据库的创建1"></a> 数据库的创建1</h1><h2 id="1-基本概念"><a class="markdownIt-Anchor" href="#1-基本概念"></a> 1. 基本概念</h2><ol><li><p>创建数据库： create database phpDb</p></li><li><p>删除数据库： drop database phpDb</p></li></ol><hr /><h2 id="2-数据库分类"><a class="markdownIt-Anchor" href="#2-数据库分类"></a> 2. 数据库分类</h2><h3 id="1-系统数据库"><a class="markdownIt-Anchor" href="#1-系统数据库"></a> 1. 系统数据库</h3><p>master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等）</p><p>model: 创建新用户数据库的模板数据库</p><p>msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，SQLSERVER任务等信息</p><p>tempdb: 存有临时对象，例如临时表格和存储过程</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png" alt="20201028175702" /></p><h3 id="2-用户数据库"><a class="markdownIt-Anchor" href="#2-用户数据库"></a> 2. 用户数据库</h3><p>用户数据库的组成: 主数据文件+日志文件</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028180023.png" alt="20201028180023" /></p><hr /><h2 id="3-创建数据库例子"><a class="markdownIt-Anchor" href="#3-创建数据库例子"></a> 3. 创建数据库例子</h2><pre class="highlight"><code class=""> --指向当前要使用的数据库   use master   go   --创建数据库  create database StudentManageDBon primary(--数据库的逻辑名name = 'StudentManageDB_data',--数据库的物理文件名（绝对路径）filename='E:/D/StudentManage_data.mdf',--数据库文件初始大小size=10MB,--数据文件增长量filegrowth=1MB)log on (name = 'StudentManageDB_log',filename = 'StudentManageDB_log.ldf',size=2MB,filegrowth=1MB)go</code></pre><p>primary代表主文件组，主要用于管理磁盘空间，文件组分为主文件组和次文件组，日志文件不属于任何文件组</p>]]></content>
     
     
       
@@ -166,7 +221,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="数据库" scheme="https://cyn51666.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
