@@ -76,9 +76,9 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     <link href="https://cyn51666.github.io/2020/10/28/sql%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
     <id>https://cyn51666.github.io/2020/10/28/sql%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
     <published>2020-10-28T13:35:51.000Z</published>
-    <updated>2020-10-29T02:25:48.343Z</updated>
+    <updated>2020-10-29T02:29:43.081Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="在sql语言中常用的运算符有以下几种"><a class="markdownIt-Anchor" href="#在sql语言中常用的运算符有以下几种"></a> 在sql语言中常用的运算符有以下几种：</h2><ol><li><p>算术运算符<br />+（加）、-（减）、*（乘）、/（除）、%（取模，也就是商）</p></li><li><p>赋值运算符<br />“=”（等号）表示赋值，例如：Name=‘王华’</p></li><li><p>比较运算符<br />等于==<br />大于&gt;<br />小于&lt;<br />不等于&lt;&gt;<br />大于等于&gt;=<br />小于等于&lt;=<br />不等于!=</p></li><li><p>逻辑运算符<br />逻辑运算符用来对某个条件进行判断，以获得判断的真假，返回带有true或false值得布尔数据类型<br />AND当且仅当两个布尔表达式都为true时，返回true<br />OR当且仅当两个布尔表达式都为false时，返回false<br />NOT对布尔表达式的值取反，优先级别最高</p></li></ol><h2 id="数据库常用的运算符的优先级"><a class="markdownIt-Anchor" href="#数据库常用的运算符的优先级"></a> 数据库常用的运算符的优先级</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213617.png" alt="20201028213617" /></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="在sql语言中常用的运算符有以下几种"><a class="markdownIt-Anchor" href="#在sql语言中常用的运算符有以下几种"></a> 在sql语言中常用的运算符有以下几种：</h2><ol><li><p>算术运算符<br />加 +、-（减）、*（乘）、/（除）、%（取模，也就是商）</p></li><li><p>赋值运算符<br />等号&quot;=&quot;表示赋值，例如：Name=‘王华’</p></li><li><p>比较运算符<br />等于==<br />大于&gt;<br />小于&lt;<br />不等于&lt;&gt;<br />大于等于&gt;=<br />小于等于&lt;=<br />不等于!=</p></li><li><p>逻辑运算符<br />逻辑运算符用来对某个条件进行判断，以获得判断的真假，返回带有true或false值得布尔数据类型<br />AND当且仅当两个布尔表达式都为true时，返回true<br />OR当且仅当两个布尔表达式都为false时，返回false<br />NOT对布尔表达式的值取反，优先级别最高</p></li></ol><h2 id="数据库常用的运算符的优先级"><a class="markdownIt-Anchor" href="#数据库常用的运算符的优先级"></a> 数据库常用的运算符的优先级</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213617.png" alt="20201028213617" /></p>]]></content>
     
     
       
@@ -87,7 +87,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;算术运算符&lt;br /&gt;
-+</summary>
+加</summary>
       
     
     
