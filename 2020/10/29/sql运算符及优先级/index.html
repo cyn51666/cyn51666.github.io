@@ -17,29 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>sql数据类型 | HEXO of YananChen</title>
-  <meta name="description" content="SQLServer数据类型  1. 文本类型   char:固定长度的非Unicode字符数据，最大长度为8000个字符   vchar:可变长度的非Unicode数据，最大长度为8000个字符   text:存储长文本信息，最大长度为2^31-1(2147483647)个字符   nchar:固定长度的Unicode数据，最大长度为4000个字符   nvchar:固定长度的Unicode数据">
+  <title>sql运算符及优先级 | HEXO of YananChen</title>
+  <meta name="description" content="在sql语言中常用的运算符有以下几种： 12345678910111213141516171819201. 算术运算符  加 +、-（减）、*（乘）、&#x2F;（除）、%（取模，也就是商）  2. 赋值运算符  等号&quot;&#x3D;&quot;表示赋值，例如：Name&#x3D;‘王华’3. 比较运算符  等于&#x3D;&#x3D;  大于&gt;  小于&lt;  不等于&lt;&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql数据类型">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:title" content="sql运算符及优先级">
+<meta property="og:url" content="https://cyn51666.github.io/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="SQLServer数据类型  1. 文本类型   char:固定长度的非Unicode字符数据，最大长度为8000个字符   vchar:可变长度的非Unicode数据，最大长度为8000个字符   text:存储长文本信息，最大长度为2^31-1(2147483647)个字符   nchar:固定长度的Unicode数据，最大长度为4000个字符   nvchar:固定长度的Unicode数据">
+<meta property="og:description" content="在sql语言中常用的运算符有以下几种： 12345678910111213141516171819201. 算术运算符  加 +、-（减）、*（乘）、&#x2F;（除）、%（取模，也就是商）  2. 赋值运算符  等号&quot;&#x3D;&quot;表示赋值，例如：Name&#x3D;‘王华’3. 比较运算符  等于&#x3D;&#x3D;  大于&gt;  小于&lt;  不等于&lt;&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png">
-<meta property="article:published_time" content="2020-10-28T11:55:50.000Z">
-<meta property="article:modified_time" content="2020-10-29T02:45:45.277Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213617.png">
+<meta property="article:published_time" content="2020-10-28T21:35:51.000Z">
+<meta property="article:modified_time" content="2020-10-29T02:54:33.603Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213617.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -274,7 +268,7 @@
                 <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/" class="title">数据的增删查改</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-29T02:06:51.000Z" itemprop="datePublished">2020-10-29</time>
+                <time datetime="2020-10-28T23:06:51.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -289,7 +283,7 @@
                 <a href="/2020/10/29/sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" class="title">sql语句的执行顺序</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-29T01:11:51.000Z" itemprop="datePublished">2020-10-29</time>
+                <time datetime="2020-10-28T22:11:51.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -301,10 +295,10 @@
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" class="title">sql运算符及优先级</a>
+                <a href="/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" class="title">sql运算符及优先级</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-28T13:35:51.000Z" itemprop="datePublished">2020-10-28</time>
+                <time datetime="2020-10-28T21:35:51.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -316,10 +310,10 @@
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/" class="title">数据表的创建</a>
+                <a href="/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="title">sql数据类型</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-28T12:00:51.000Z" itemprop="datePublished">2020-10-28</time>
+                <time datetime="2020-10-28T20:55:50.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -331,10 +325,10 @@
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="title">sql数据类型</a>
+                <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" class="title">数据据库的创建2</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-28T11:55:50.000Z" itemprop="datePublished">2020-10-28</time>
+                <time datetime="2020-10-28T17:49:46.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -352,14 +346,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-sql数据类型" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-sql运算符及优先级" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      sql数据类型
+      sql运算符及优先级
     </h1>
   
 
@@ -367,8 +361,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
-	  <time datetime="2020-10-28T11:55:50.000Z" itemprop="datePublished">2020-10-28</time>
+	<a href="/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" class="article-date">
+	  <time datetime="2020-10-28T21:35:51.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 </span>
         
@@ -393,65 +387,16 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="sqlserver数据类型"><a class="markdownIt-Anchor" href="#sqlserver数据类型"></a> SQLServer数据类型</h2>
-<h3 id="1-文本类型"><a class="markdownIt-Anchor" href="#1-文本类型"></a> 1. 文本类型</h3>
-<ol>
-<li>
-<p>char:固定长度的非Unicode字符数据，最大长度为8000个字符</p>
-</li>
-<li>
-<p>vchar:可变长度的非Unicode数据，最大长度为8000个字符</p>
-</li>
-<li>
-<p>text:存储长文本信息，最大长度为2^31-1(2147483647)个字符</p>
-</li>
-<li>
-<p>nchar:固定长度的Unicode数据，最大长度为4000个字符</p>
-</li>
-<li>
-<p>nvchar:固定长度的Unicode数据，最大长度为4000个字符</p>
-</li>
-<li>
-<p>text:存储可变长文本信息，最大长度为2^30-1个字符</p>
-</li>
-</ol>
-<h3 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意：</h3>
-<ol>
-<li>
-<p>Unicode是国际组织制定的可以容纳世界上所有文字和字符的编码方案</p>
-</li>
-<li>
-<p>带n的数据类型长度是不带n的两倍，比如nchar(1)和char(2)长度相同</p>
-</li>
-</ol>
-<h3 id="2-值类型"><a class="markdownIt-Anchor" href="#2-值类型"></a> 2. 值类型</h3>
-<ol>
-<li>整数类型</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png" alt="20201028192808" /></p>
-<ol start="2">
-<li>精确数字类型</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png" alt="20201028192848" /></p>
-<ol start="3">
-<li>近似数字（浮点）类型</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png" alt="20201028192911" /></p>
-<h3 id="3-日期类型"><a class="markdownIt-Anchor" href="#3-日期类型"></a> 3. 日期类型</h3>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png" alt="20201028193316" /></p>
-<p>注意：日期在使用时要用单引号（’’）括起来，建议都使用datetime</p>
-<h3 id="4-货币类型"><a class="markdownIt-Anchor" href="#4-货币类型"></a> 4. 货币类型</h3>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png" alt="20201028193728" /></p>
-<h3 id="5-位类型"><a class="markdownIt-Anchor" href="#5-位类型"></a> 5. 位类型</h3>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png" alt="20201028193759" /></p>
-<h3 id="6-二进制类型"><a class="markdownIt-Anchor" href="#6-二进制类型"></a> 6. 二进制类型</h3>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png" alt="20201028193835" /></p>
+        <h2 id="在sql语言中常用的运算符有以下几种"><a class="markdownIt-Anchor" href="#在sql语言中常用的运算符有以下几种"></a> 在sql语言中常用的运算符有以下几种：</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1. 算术运算符  </span><br><span class="line">加 +、-（减）、*（乘）、&#x2F;（除）、%（取模，也就是商）  </span><br><span class="line"></span><br><span class="line">2. 赋值运算符  </span><br><span class="line">等号&quot;&#x3D;&quot;表示赋值，例如：Name&#x3D;‘王华’</span><br><span class="line"></span><br><span class="line">3. 比较运算符  </span><br><span class="line">等于&#x3D;&#x3D;  </span><br><span class="line">大于&gt;  </span><br><span class="line">小于&lt;  </span><br><span class="line">不等于&lt;&gt;  </span><br><span class="line">大于等于&gt;&#x3D;  </span><br><span class="line">小于等于&lt;&#x3D;  </span><br><span class="line">不等于!&#x3D;</span><br><span class="line"></span><br><span class="line">4. 逻辑运算符  </span><br><span class="line">逻辑运算符用来对某个条件进行判断，以获得判断的真假，返回带有true或false值得布尔数据类型  </span><br><span class="line">AND当且仅当两个布尔表达式都为true时，返回true  </span><br><span class="line">OR当且仅当两个布尔表达式都为false时，返回false  </span><br><span class="line">NOT对布尔表达式的值取反，优先级别最高</span><br></pre></td></tr></table></figure>
+<h2 id="数据库常用的运算符的优先级"><a class="markdownIt-Anchor" href="#数据库常用的运算符的优先级"></a> 数据库常用的运算符的优先级</h2>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028213617.png" alt="20201028213617" /></p>
 
       
     </div>
@@ -461,7 +406,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="sql数据类型" target="_blank" rel="external">https://cyn51666.github.io/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</a>
+      <a href="https://cyn51666.github.io/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" title="sql运算符及优先级" target="_blank" rel="external">https://cyn51666.github.io/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -508,12 +453,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/" title="数据表的创建"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/10/29/sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" title="sql语句的执行顺序"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" title="数据据库的创建2"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="sql数据类型"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

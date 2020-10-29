@@ -17,24 +17,29 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>数据据库的创建1 | HEXO of YananChen</title>
-  <meta name="description" content="数据库的创建1  1. 基本概念   创建数据库： create database phpDb   删除数据库： drop database phpDb     2. 数据库分类  1. 系统数据库 master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等） model: 创建新用户数据库的模板数据库 msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，">
+  <title>sql数据类型 | HEXO of YananChen</title>
+  <meta name="description" content="SQLServer数据类型  1. 文本类型   char:固定长度的非Unicode字符数据，最大长度为8000个字符   vchar:可变长度的非Unicode数据，最大长度为8000个字符   text:存储长文本信息，最大长度为2^31-1(2147483647)个字符   nchar:固定长度的Unicode数据，最大长度为4000个字符   nvchar:固定长度的Unicode数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据据库的创建1">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/index.html">
+<meta property="og:title" content="sql数据类型">
+<meta property="og:url" content="https://cyn51666.github.io/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数据库的创建1  1. 基本概念   创建数据库： create database phpDb   删除数据库： drop database phpDb     2. 数据库分类  1. 系统数据库 master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等） model: 创建新用户数据库的模板数据库 msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，">
+<meta property="og:description" content="SQLServer数据类型  1. 文本类型   char:固定长度的非Unicode字符数据，最大长度为8000个字符   vchar:可变长度的非Unicode数据，最大长度为8000个字符   text:存储长文本信息，最大长度为2^31-1(2147483647)个字符   nchar:固定长度的Unicode数据，最大长度为4000个字符   nvchar:固定长度的Unicode数据">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028180023.png">
-<meta property="article:published_time" content="2020-10-28T11:48:46.000Z">
-<meta property="article:modified_time" content="2020-10-29T01:50:31.916Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png">
+<meta property="article:published_time" content="2020-10-28T20:55:50.000Z">
+<meta property="article:modified_time" content="2020-10-29T02:54:41.363Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -269,7 +274,7 @@
                 <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/" class="title">数据的增删查改</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-29T02:06:51.000Z" itemprop="datePublished">2020-10-29</time>
+                <time datetime="2020-10-28T23:06:51.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -284,7 +289,7 @@
                 <a href="/2020/10/29/sql%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" class="title">sql语句的执行顺序</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-29T01:11:51.000Z" itemprop="datePublished">2020-10-29</time>
+                <time datetime="2020-10-28T22:11:51.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -296,10 +301,10 @@
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" class="title">sql运算符及优先级</a>
+                <a href="/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" class="title">sql运算符及优先级</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-28T13:35:51.000Z" itemprop="datePublished">2020-10-28</time>
+                <time datetime="2020-10-28T21:35:51.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -311,10 +316,10 @@
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA/" class="title">数据表的创建</a>
+                <a href="/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="title">sql数据类型</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-28T12:00:51.000Z" itemprop="datePublished">2020-10-28</time>
+                <time datetime="2020-10-28T20:55:50.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -326,10 +331,10 @@
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/10/28/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="title">sql数据类型</a>
+                <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" class="title">数据据库的创建2</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-10-28T11:55:50.000Z" itemprop="datePublished">2020-10-28</time>
+                <time datetime="2020-10-28T17:49:46.000Z" itemprop="datePublished">2020-10-29</time>
               </p>
             </div>
           </li>
@@ -347,14 +352,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-数据库的创建1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-sql数据类型" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      数据据库的创建1
+      sql数据类型
     </h1>
   
 
@@ -362,8 +367,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/" class="article-date">
-	  <time datetime="2020-10-28T11:48:46.000Z" itemprop="datePublished">2020-10-28</time>
+	<a href="/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+	  <time datetime="2020-10-28T20:55:50.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 </span>
         
@@ -388,61 +393,65 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="数据库的创建1"><a class="markdownIt-Anchor" href="#数据库的创建1"></a> 数据库的创建1</h1>
-<h2 id="1-基本概念"><a class="markdownIt-Anchor" href="#1-基本概念"></a> 1. 基本概念</h2>
+        <h2 id="sqlserver数据类型"><a class="markdownIt-Anchor" href="#sqlserver数据类型"></a> SQLServer数据类型</h2>
+<h3 id="1-文本类型"><a class="markdownIt-Anchor" href="#1-文本类型"></a> 1. 文本类型</h3>
 <ol>
 <li>
-<p>创建数据库： create database phpDb</p>
+<p>char:固定长度的非Unicode字符数据，最大长度为8000个字符</p>
 </li>
 <li>
-<p>删除数据库： drop database phpDb</p>
+<p>vchar:可变长度的非Unicode数据，最大长度为8000个字符</p>
+</li>
+<li>
+<p>text:存储长文本信息，最大长度为2^31-1(2147483647)个字符</p>
+</li>
+<li>
+<p>nchar:固定长度的Unicode数据，最大长度为4000个字符</p>
+</li>
+<li>
+<p>nvchar:固定长度的Unicode数据，最大长度为4000个字符</p>
+</li>
+<li>
+<p>text:存储可变长文本信息，最大长度为2^30-1个字符</p>
 </li>
 </ol>
-<hr />
-<h2 id="2-数据库分类"><a class="markdownIt-Anchor" href="#2-数据库分类"></a> 2. 数据库分类</h2>
-<h3 id="1-系统数据库"><a class="markdownIt-Anchor" href="#1-系统数据库"></a> 1. 系统数据库</h3>
-<p>master: 保存已有数据库的信息（系统登录，配置设置，已连接的SERVER等）</p>
-<p>model: 创建新用户数据库的模板数据库</p>
-<p>msdb: 用来保存数据库备份，SQL Agent信息，DTS程序包，SQLSERVER任务等信息</p>
-<p>tempdb: 存有临时对象，例如临时表格和存储过程</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028175702.png" alt="20201028175702" /></p>
-<h3 id="2-用户数据库"><a class="markdownIt-Anchor" href="#2-用户数据库"></a> 2. 用户数据库</h3>
-<p>用户数据库的组成: 主数据文件+日志文件</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028180023.png" alt="20201028180023" /></p>
-<hr />
-<h2 id="3-创建数据库例子"><a class="markdownIt-Anchor" href="#3-创建数据库例子"></a> 3. 创建数据库例子</h2>
-<pre class="highlight"><code class=""> --指向当前要使用的数据库  
- use master  
- go  
- --创建数据库  
-create database StudentManageDB
-on primary
-(
---数据库的逻辑名
-name = 'StudentManageDB_data',
---数据库的物理文件名（绝对路径）
-filename='E:/D/StudentManage_data.mdf',
---数据库文件初始大小
-size=10MB,
---数据文件增长量
-filegrowth=1MB
-)
-log on 
-(
-name = 'StudentManageDB_log',
-filename = 'StudentManageDB_log.ldf',
-size=2MB,
-filegrowth=1MB
-)
-go
-</code></pre>
-<p>primary代表主文件组，主要用于管理磁盘空间，文件组分为主文件组和次文件组，日志文件不属于任何文件组</p>
+<h3 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意：</h3>
+<ol>
+<li>
+<p>Unicode是国际组织制定的可以容纳世界上所有文字和字符的编码方案</p>
+</li>
+<li>
+<p>带n的数据类型长度是不带n的两倍，比如nchar(1)和char(2)长度相同</p>
+</li>
+</ol>
+<h3 id="2-值类型"><a class="markdownIt-Anchor" href="#2-值类型"></a> 2. 值类型</h3>
+<ol>
+<li>整数类型</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192808.png" alt="20201028192808" /></p>
+<ol start="2">
+<li>精确数字类型</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192848.png" alt="20201028192848" /></p>
+<ol start="3">
+<li>近似数字（浮点）类型</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028192911.png" alt="20201028192911" /></p>
+<h3 id="3-日期类型"><a class="markdownIt-Anchor" href="#3-日期类型"></a> 3. 日期类型</h3>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193316.png" alt="20201028193316" /></p>
+<p>注意：日期在使用时要用单引号（’’）括起来，建议都使用datetime</p>
+<h3 id="4-货币类型"><a class="markdownIt-Anchor" href="#4-货币类型"></a> 4. 货币类型</h3>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193728.png" alt="20201028193728" /></p>
+<h3 id="5-位类型"><a class="markdownIt-Anchor" href="#5-位类型"></a> 5. 位类型</h3>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193759.png" alt="20201028193759" /></p>
+<h3 id="6-二进制类型"><a class="markdownIt-Anchor" href="#6-二进制类型"></a> 6. 二进制类型</h3>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201028193835.png" alt="20201028193835" /></p>
 
       
     </div>
@@ -452,7 +461,7 @@ go
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/" title="数据据库的创建1" target="_blank" rel="external">https://cyn51666.github.io/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA1/</a>
+      <a href="https://cyn51666.github.io/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="sql数据类型" target="_blank" rel="external">https://cyn51666.github.io/2020/10/29/sql%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -499,12 +508,12 @@ go
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" title="数据据库的创建2"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/10/29/sql%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/" title="sql运算符及优先级"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="C Sharp实体类在开发中的应用"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA2/" title="数据据库的创建2"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
