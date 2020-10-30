@@ -17,21 +17,24 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C Sharp对象职责明确原则 | HEXO of YananChen</title>
-  <meta name="description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+  <title>数据库键约束 | HEXO of YananChen</title>
+  <meta name="description" content="数据完整性  观察并分析以下示例数据表中的数据     总结分析   当前数据存在不准确，不一致的数据，则数据库失去了完整性   数据完整性破坏一般由数据库的设计不合理导致，应避免出现     数据完整性概念 能确保存储在数据库中的数据的准确性和一致性    完整性约束的类型  常用三种类型的约束保证数据完整性    主键约束与唯一键约束   添加约束的基本语法 alter table 表名 a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Sharp对象职责明确原则">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/index.html">
+<meta property="og:title" content="数据库键约束">
+<meta property="og:url" content="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+<meta property="og:description" content="数据完整性  观察并分析以下示例数据表中的数据     总结分析   当前数据存在不准确，不一致的数据，则数据库失去了完整性   数据完整性破坏一般由数据库的设计不合理导致，应避免出现     数据完整性概念 能确保存储在数据库中的数据的准确性和一致性    完整性约束的类型  常用三种类型的约束保证数据完整性    主键约束与唯一键约束   添加约束的基本语法 alter table 表名 a">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-12T12:48:47.000Z">
-<meta property="article:modified_time" content="2020-10-13T00:27:10.922Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030184927.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030185930.png">
+<meta property="article:published_time" content="2020-10-29T10:44:46.000Z">
+<meta property="article:modified_time" content="2020-10-30T12:20:14.658Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030184927.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -344,14 +347,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-C Sharp职责明确原则" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-数据库键约束" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C Sharp对象职责明确原则
+      数据库键约束
     </h1>
   
 
@@ -359,14 +362,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" class="article-date">
-	  <time datetime="2020-10-12T12:48:47.000Z" itemprop="datePublished">2020-10-12</time>
+	<a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/" class="article-date">
+	  <time datetime="2020-10-29T10:44:46.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/C-Sharp/">C Sharp</a>
+    <a class="article-category-link" href="/categories/SQL-Server/">SQL Server</a>
   </span>
 
         
@@ -385,31 +388,58 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <ol>
-<li>前后台代码混编的缺点
+        <h2 id="数据完整性"><a class="markdownIt-Anchor" href="#数据完整性"></a> 数据完整性</h2>
 <ol>
-<li>程序编写人员必须非常实习后台数据的设计</li>
-<li>业务逻辑复杂时很难查找错误且不利于后期维护</li>
-<li>不符合面向对象的设计思想</li>
+<li>观察并分析以下示例数据表中的数据</li>
 </ol>
-</li>
-</ol>
-<hr />
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030184927.png" alt="20201030184927" /></p>
 <ol start="2">
-<li>问题解决
+<li>
+<p>总结分析</p>
 <ol>
-<li>将数据展示代码和数据访问代码分离</li>
-<li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li>
-<li>将对该实体操作的方法封装到对应的访问类中</li>
-</ol>
+<li>
+<p>当前数据存在不准确，不一致的数据，则数据库失去了完整性</p>
+</li>
+<li>
+<p>数据完整性破坏一般由数据库的设计不合理导致，应避免出现</p>
 </li>
 </ol>
+</li>
+<li>
+<p>数据完整性概念<br />
+能确保存储在数据库中的数据的准确性和一致性</p>
+</li>
+</ol>
+<h2 id="完整性约束的类型"><a class="markdownIt-Anchor" href="#完整性约束的类型"></a> 完整性约束的类型</h2>
+<ol>
+<li>常用三种类型的约束保证数据完整性</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030185930.png" alt="20201030185930" /></p>
+<h2 id="主键约束与唯一键约束"><a class="markdownIt-Anchor" href="#主键约束与唯一键约束"></a> 主键约束与唯一键约束</h2>
+<ol>
+<li>
+<p>添加约束的基本语法<br />
+alter table 表名 add constraint 约束名 约束类型(具体的约束说明)</p>
+</li>
+<li>
+<p>约束名的取名规则推荐采用：约束类型_约束字段</p>
+<p>主键约束（Primary Key）：如 PK_StudentId</p>
+<p>唯一键约束（Unique Key）：如 UQ_StudentIdNo</p>
+<p>检查约束（Check Key）: 如 CK_Age</p>
+<p>默认约束（Default Key）： 如 DF_StudentAddress</p>
+<p>外键约束（Foreign Key）： 如 FK_ClassId</p>
+</li>
+<li>
+<p>主键约束，唯一键约束，检查约束，默认约束，外键约束</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">use StudentManageDB</span><br><span class="line">go</span><br><span class="line"></span><br><span class="line">-创建主键约束Primary Key</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;pk_StudentId&#39;)</span><br><span class="line">alter table Students drop constrain pk_studentId</span><br><span class="line">alter table Students add constrain pk_studentId primary key(studentId)</span><br><span class="line"></span><br><span class="line">-创建唯一键约束unique</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;pk_StudentId&#39;)</span><br><span class="line">alter table Students drop constrain uk_studentIdNo</span><br><span class="line">alter table Students add constrain uk_studentIdNo unique(studentIdNo)</span><br><span class="line"></span><br><span class="line">-创建检查约束</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;ck_Age&#39;)</span><br><span class="line">alter table Students drop constrain ck_Age</span><br><span class="line">alter table Students add constrain ck_Age check(Age between 18 and 35)</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;ck_PhoneNumber&#39;)</span><br><span class="line">alter table Students drop constrain ck_PhoneNumber</span><br><span class="line">alter table Students add constrain ck_PhoneNumber check(len(PhoneNumber)&#x3D;11))</span><br><span class="line"></span><br><span class="line">-创建默认约束</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;df_Address&#39;)</span><br><span class="line">alter table Students drop constrain df_Address</span><br><span class="line">alter table Students add constrain df_Address deafult(&#39;地址不详&#39;) for StudentAddress</span><br><span class="line"></span><br><span class="line">-使用默认值插入数据</span><br><span class="line">insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;小刘&#39;,&#39;女&#39;,&#39;1998-10-10&#39;,24,123456789987654321,&#39;022-11111111&#39;,default,4)</span><br><span class="line"></span><br><span class="line">-外键约束</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;fk_ClassId&#39;)</span><br><span class="line">alter table Students drop constrain fk_ClassId</span><br><span class="line">alter table Students add constrain fk_ClassId foreign key(ClassId) reference StudentClass(ClassId)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -419,7 +449,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" title="C Sharp对象职责明确原则" target="_blank" rel="external">https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/</a>
+      <a href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/" title="数据库键约束" target="_blank" rel="external">https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -466,12 +496,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="C Sharp实体类在开发中的应用"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" title="数据库基本模糊查询"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/12/C%20Sharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" title="C Sharp方法参数过多的缺点"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%9F%A5%E6%94%B9/" title="数据的增删查改"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

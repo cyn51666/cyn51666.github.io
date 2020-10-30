@@ -17,21 +17,35 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C Sharp对象职责明确原则 | HEXO of YananChen</title>
-  <meta name="description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+  <title>数据库基本模糊查询 | HEXO of YananChen</title>
+  <meta name="description" content="1. 查询过程与基本原理   查询与响应过程    理解查询  服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表 虚拟表是数据组合后的重新展示，而不是原始的物理数据     2. 查询实现过程分析 简单查询过程   3. 基本查询   查询一般有四个基本组成部分 查询内容 select StudentId,StudentName,Gender 查询对象 from Students">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Sharp对象职责明确原则">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/index.html">
+<meta property="og:title" content="数据库基本模糊查询">
+<meta property="og:url" content="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+<meta property="og:description" content="1. 查询过程与基本原理   查询与响应过程    理解查询  服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表 虚拟表是数据组合后的重新展示，而不是原始的物理数据     2. 查询实现过程分析 简单查询过程   3. 基本查询   查询一般有四个基本组成部分 查询内容 select StudentId,StudentName,Gender 查询对象 from Students">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-12T12:48:47.000Z">
-<meta property="article:modified_time" content="2020-10-13T00:27:10.922Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203923.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030205752.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210430.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210903.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211447.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211547.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211735.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212538.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212604.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030213611.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214025.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214559.png">
+<meta property="article:published_time" content="2020-10-29T12:14:00.000Z">
+<meta property="article:modified_time" content="2020-10-30T13:46:36.212Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -344,14 +358,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-C Sharp职责明确原则" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-数据库基本模糊查询" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C Sharp对象职责明确原则
+      数据库基本模糊查询
     </h1>
   
 
@@ -359,14 +373,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" class="article-date">
-	  <time datetime="2020-10-12T12:48:47.000Z" itemprop="datePublished">2020-10-12</time>
+	<a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" class="article-date">
+	  <time datetime="2020-10-29T12:14:00.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/C-Sharp/">C Sharp</a>
+    <a class="article-category-link" href="/categories/SQL-Server/">SQL Server</a>
   </span>
 
         
@@ -385,29 +399,120 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <ol>
-<li>前后台代码混编的缺点
+        <h2 id="1-查询过程与基本原理"><a class="markdownIt-Anchor" href="#1-查询过程与基本原理"></a> 1. 查询过程与基本原理</h2>
 <ol>
-<li>程序编写人员必须非常实习后台数据的设计</li>
-<li>业务逻辑复杂时很难查找错误且不利于后期维护</li>
-<li>不符合面向对象的设计思想</li>
+<li>
+<p>查询与响应过程</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png" alt="20201030203320" /></p>
+</li>
+<li>
+<p>理解查询</p>
+<ol>
+<li>服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表</li>
+<li>虚拟表是数据组合后的重新展示，而不是原始的物理数据</li>
 </ol>
 </li>
 </ol>
-<hr />
-<ol start="2">
-<li>问题解决
+<h2 id="2-查询实现过程分析"><a class="markdownIt-Anchor" href="#2-查询实现过程分析"></a> 2. 查询实现过程分析</h2>
+<p>简单查询过程</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203923.png" alt="20201030203923" /></p>
+<h2 id="3-基本查询"><a class="markdownIt-Anchor" href="#3-基本查询"></a> 3. 基本查询</h2>
 <ol>
-<li>将数据展示代码和数据访问代码分离</li>
-<li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li>
-<li>将对该实体操作的方法封装到对应的访问类中</li>
+<li>
+<p>查询一般有四个基本组成部分<br />
+查询内容 select StudentId,StudentName,Gender<br />
+查询对象 from Students<br />
+过滤条件 where Gender=‘男’<br />
+结果排序 order by StudentId DESC</p>
+</li>
+<li>
+<p>基本查询语法框架<br />
+select &lt;列名&gt;<br />
+from &lt;表名&gt;<br />
+[where &lt;查询条件表达式&gt;]<br />
+[order by &lt;排序的列名&gt;[ASC或DESC]]<br />
+注意：多个查询条件用and</p>
+</li>
+<li>
+<p>使用AS或使用=重新命名字段</p>
+<p>select StudentName as 姓名,Gender as 性别,出生年月=Birthday from Students where Gender = ‘男’</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030205752.png" alt="20201030205752" /></p>
+</li>
+<li>
+<p>加号的使用</p>
+<p>select StudentName,地址和电话=StudentAddress +’(’+ PhoneNumber + ‘)’ from Students where Gender = ‘男’</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210430.png" alt="20201030210430" /></p>
+</li>
+<li>
+<p>查询空列</p>
+<p>insert into ScoreList(StudentId,CSharp)values(100009,78)<br />
+select *from ScoreList where SQLServerDB is null</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210903.png" alt="20201030210903" /></p>
+</li>
+<li>
+<p>使用常量列</p>
+<p>select Studentname,Gender,所在学校=‘天津大学’ from Students where Gender = ‘男’ and Age &gt;= 24</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211447.png" alt="20201030211447" /></p>
+</li>
+<li>
+<p>限制固定行数</p>
+<p>select top 5 StudentName,Gender,Birthday from Students</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211547.png" alt="20201030211547" /></p>
+</li>
+<li>
+<p>返回百分之多少行</p>
+<p>select top 20 percent StudentName,Gender,Birthday from Students</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211735.png" alt="20201030211735" /></p>
+</li>
+<li>
+<p>升序排列</p>
+<p>select StudentId,(CSharp+5) as C#,DB = SQLServerDB<br />
+from ScoreList where (CSharp+5) &gt; 90<br />
+order by CSharp ASC</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212538.png" alt="20201030212538" /></p>
+</li>
+<li>
+<p>降序排列</p>
+<p>select StudentId,(CSharp+5) as C#,DB = SQLServerDB<br />
+from ScoreList where (CSharp+5) &gt; 90<br />
+order by CSharp DESC,SQLServerDB ASC</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212604.png" alt="20201030212604" /></p>
+</li>
 </ol>
+<h2 id="4-模糊查询"><a class="markdownIt-Anchor" href="#4-模糊查询"></a> 4. 模糊查询</h2>
+<ol>
+<li>
+<p>模糊查询LIKE</p>
+<p>使用LIKE查询时，字段中的内容不一定与查询内容完全匹配，只要字段中包含这些内容即可</p>
+<p>select StudentName,StudentAddress from Students<br />
+where StudentAddress like ‘天津%’</p>
+<p>select StudentName,StudentAddress from Students<br />
+where StudentAddress like ‘%小%’</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030213611.png" alt="20201030213611" /></p>
+</li>
+<li>
+<p>模糊查询between</p>
+<p>把某一字段中的值限定在特定范围内的记录查询出来</p>
+<p>select *from ScoreList<br />
+where CSharp between 80 and 90</p>
+<p>select StudentName,Birthday from Students<br />
+where Birthday between ‘1987-1-1’ and ‘1988-1-1’</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214025.png" alt="20201030214025" /></p>
+</li>
+<li>
+<p>模糊查询in</p>
+<p>把某一个字段中的内容与所列出的查询内容列表匹配的记录查询出来</p>
+<p>select StudentName,Birthday,Age from Students<br />
+where Age in (21,22,23)</p>
+<p>select StudentName,Birthday,Age from Students<br />
+where StudentName in (‘小李’，‘小王’，‘小华’)</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214559.png" alt="20201030214559" /></p>
 </li>
 </ol>
 
@@ -419,7 +524,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" title="C Sharp对象职责明确原则" target="_blank" rel="external">https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/</a>
+      <a href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" title="数据库基本模糊查询" target="_blank" rel="external">https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -466,12 +571,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="C Sharp实体类在开发中的应用"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/10/29/%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/" title="查询函数的使用"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/12/C%20Sharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" title="C Sharp方法参数过多的缺点"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/" title="数据库键约束"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

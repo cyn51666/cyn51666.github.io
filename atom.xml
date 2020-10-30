@@ -6,7 +6,7 @@
   <link href="https://cyn51666.github.io/atom.xml" rel="self"/>
   
   <link href="https://cyn51666.github.io/"/>
-  <updated>2020-10-29T02:55:08.137Z</updated>
+  <updated>2020-10-30T13:48:33.576Z</updated>
   <id>https://cyn51666.github.io/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>查询函数的使用</title>
+    <link href="https://cyn51666.github.io/2020/10/29/%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://cyn51666.github.io/2020/10/29/%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-10-29T13:48:00.000Z</published>
+    <updated>2020-10-30T13:48:33.576Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="查询函数的使用"><a class="markdownIt-Anchor" href="#查询函数的使用"></a> 查询函数的使用</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;查询函数的使用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#查询函数的使用&quot;&gt;&lt;/a&gt; 查询函数的使用&lt;/h2&gt;
+</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库基本模糊查询</title>
+    <link href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/"/>
+    <id>https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/</id>
+    <published>2020-10-29T12:14:00.000Z</published>
+    <updated>2020-10-30T13:46:36.212Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-查询过程与基本原理"><a class="markdownIt-Anchor" href="#1-查询过程与基本原理"></a> 1. 查询过程与基本原理</h2><ol><li><p>查询与响应过程</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png" alt="20201030203320" /></p></li><li><p>理解查询</p><ol><li>服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表</li><li>虚拟表是数据组合后的重新展示，而不是原始的物理数据</li></ol></li></ol><h2 id="2-查询实现过程分析"><a class="markdownIt-Anchor" href="#2-查询实现过程分析"></a> 2. 查询实现过程分析</h2><p>简单查询过程</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203923.png" alt="20201030203923" /></p><h2 id="3-基本查询"><a class="markdownIt-Anchor" href="#3-基本查询"></a> 3. 基本查询</h2><ol><li><p>查询一般有四个基本组成部分<br />查询内容 select StudentId,StudentName,Gender<br />查询对象 from Students<br />过滤条件 where Gender=‘男’<br />结果排序 order by StudentId DESC</p></li><li><p>基本查询语法框架<br />select &lt;列名&gt;<br />from &lt;表名&gt;<br />[where &lt;查询条件表达式&gt;]<br />[order by &lt;排序的列名&gt;[ASC或DESC]]<br />注意：多个查询条件用and</p></li><li><p>使用AS或使用=重新命名字段</p><p>select StudentName as 姓名,Gender as 性别,出生年月=Birthday from Students where Gender = ‘男’</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030205752.png" alt="20201030205752" /></p></li><li><p>加号的使用</p><p>select StudentName,地址和电话=StudentAddress +’(’+ PhoneNumber + ‘)’ from Students where Gender = ‘男’</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210430.png" alt="20201030210430" /></p></li><li><p>查询空列</p><p>insert into ScoreList(StudentId,CSharp)values(100009,78)<br />select *from ScoreList where SQLServerDB is null</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210903.png" alt="20201030210903" /></p></li><li><p>使用常量列</p><p>select Studentname,Gender,所在学校=‘天津大学’ from Students where Gender = ‘男’ and Age &gt;= 24</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211447.png" alt="20201030211447" /></p></li><li><p>限制固定行数</p><p>select top 5 StudentName,Gender,Birthday from Students</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211547.png" alt="20201030211547" /></p></li><li><p>返回百分之多少行</p><p>select top 20 percent StudentName,Gender,Birthday from Students</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211735.png" alt="20201030211735" /></p></li><li><p>升序排列</p><p>select StudentId,(CSharp+5) as C#,DB = SQLServerDB<br />from ScoreList where (CSharp+5) &gt; 90<br />order by CSharp ASC</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212538.png" alt="20201030212538" /></p></li><li><p>降序排列</p><p>select StudentId,(CSharp+5) as C#,DB = SQLServerDB<br />from ScoreList where (CSharp+5) &gt; 90<br />order by CSharp DESC,SQLServerDB ASC</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212604.png" alt="20201030212604" /></p></li></ol><h2 id="4-模糊查询"><a class="markdownIt-Anchor" href="#4-模糊查询"></a> 4. 模糊查询</h2><ol><li><p>模糊查询LIKE</p><p>使用LIKE查询时，字段中的内容不一定与查询内容完全匹配，只要字段中包含这些内容即可</p><p>select StudentName,StudentAddress from Students<br />where StudentAddress like ‘天津%’</p><p>select StudentName,StudentAddress from Students<br />where StudentAddress like ‘%小%’</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030213611.png" alt="20201030213611" /></p></li><li><p>模糊查询between</p><p>把某一字段中的值限定在特定范围内的记录查询出来</p><p>select *from ScoreList<br />where CSharp between 80 and 90</p><p>select StudentName,Birthday from Students<br />where Birthday between ‘1987-1-1’ and ‘1988-1-1’</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214025.png" alt="20201030214025" /></p></li><li><p>模糊查询in</p><p>把某一个字段中的内容与所列出的查询内容列表匹配的记录查询出来</p><p>select StudentName,Birthday,Age from Students<br />where Age in (21,22,23)</p><p>select StudentName,Birthday,Age from Students<br />where StudentName in (‘小李’，‘小王’，‘小华’)</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214559.png" alt="20201030214559" /></p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-查询过程与基本原理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-查询过程与基本原理&quot;&gt;&lt;/a&gt; 1. 查询过程与基本原理&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查询与响应过程&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://r</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库键约束</title>
+    <link href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/"/>
+    <id>https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/</id>
+    <published>2020-10-29T10:44:46.000Z</published>
+    <updated>2020-10-30T12:20:14.658Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数据完整性"><a class="markdownIt-Anchor" href="#数据完整性"></a> 数据完整性</h2><ol><li>观察并分析以下示例数据表中的数据</li></ol><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030184927.png" alt="20201030184927" /></p><ol start="2"><li><p>总结分析</p><ol><li><p>当前数据存在不准确，不一致的数据，则数据库失去了完整性</p></li><li><p>数据完整性破坏一般由数据库的设计不合理导致，应避免出现</p></li></ol></li><li><p>数据完整性概念<br />能确保存储在数据库中的数据的准确性和一致性</p></li></ol><h2 id="完整性约束的类型"><a class="markdownIt-Anchor" href="#完整性约束的类型"></a> 完整性约束的类型</h2><ol><li>常用三种类型的约束保证数据完整性</li></ol><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030185930.png" alt="20201030185930" /></p><h2 id="主键约束与唯一键约束"><a class="markdownIt-Anchor" href="#主键约束与唯一键约束"></a> 主键约束与唯一键约束</h2><ol><li><p>添加约束的基本语法<br />alter table 表名 add constraint 约束名 约束类型(具体的约束说明)</p></li><li><p>约束名的取名规则推荐采用：约束类型_约束字段</p><p>主键约束（Primary Key）：如 PK_StudentId</p><p>唯一键约束（Unique Key）：如 UQ_StudentIdNo</p><p>检查约束（Check Key）: 如 CK_Age</p><p>默认约束（Default Key）： 如 DF_StudentAddress</p><p>外键约束（Foreign Key）： 如 FK_ClassId</p></li><li><p>主键约束，唯一键约束，检查约束，默认约束，外键约束</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">use StudentManageDB</span><br><span class="line">go</span><br><span class="line"></span><br><span class="line">-创建主键约束Primary Key</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;pk_StudentId&#39;)</span><br><span class="line">alter table Students drop constrain pk_studentId</span><br><span class="line">alter table Students add constrain pk_studentId primary key(studentId)</span><br><span class="line"></span><br><span class="line">-创建唯一键约束unique</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;pk_StudentId&#39;)</span><br><span class="line">alter table Students drop constrain uk_studentIdNo</span><br><span class="line">alter table Students add constrain uk_studentIdNo unique(studentIdNo)</span><br><span class="line"></span><br><span class="line">-创建检查约束</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;ck_Age&#39;)</span><br><span class="line">alter table Students drop constrain ck_Age</span><br><span class="line">alter table Students add constrain ck_Age check(Age between 18 and 35)</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;ck_PhoneNumber&#39;)</span><br><span class="line">alter table Students drop constrain ck_PhoneNumber</span><br><span class="line">alter table Students add constrain ck_PhoneNumber check(len(PhoneNumber)&#x3D;11))</span><br><span class="line"></span><br><span class="line">-创建默认约束</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;df_Address&#39;)</span><br><span class="line">alter table Students drop constrain df_Address</span><br><span class="line">alter table Students add constrain df_Address deafult(&#39;地址不详&#39;) for StudentAddress</span><br><span class="line"></span><br><span class="line">-使用默认值插入数据</span><br><span class="line">insert into Students(StudentName,Gender,Birthday,Age,StudentNo,PhoneNumber,StudentAddress,ClassId)values(&#39;小刘&#39;,&#39;女&#39;,&#39;1998-10-10&#39;,24,123456789987654321,&#39;022-11111111&#39;,default,4)</span><br><span class="line"></span><br><span class="line">-外键约束</span><br><span class="line">if exists(select * from sysobjects where name &#x3D; &#39;fk_ClassId&#39;)</span><br><span class="line">alter table Students drop constrain fk_ClassId</span><br><span class="line">alter table Students add constrain fk_ClassId foreign key(ClassId) reference StudentClass(ClassId)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;数据完整性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据完整性&quot;&gt;&lt;/a&gt; 数据完整性&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;观察并分析以下示例数据表中的数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.gith</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>数据的增删查改</title>
