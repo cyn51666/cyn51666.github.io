@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>数据库创建完整过程 | HEXO of YananChen</title>
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库创建完整过程">
+<meta property="og:url" content="https://cyn51666.github.io/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-31T23:06:51.000Z">
+<meta property="article:modified_time" content="2020-11-01T12:30:19.943Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://cyn51666.github.io/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://cyn51666.github.io/" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">陈亚南</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 北京昌平, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cyn51666" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6555705660/home" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://www.zhihu.com/people/cathy-77-60-51" target="_blank" title="Zhihu" data-toggle=tooltip data-placement=top><i class="icon icon-zhihu"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎来到陈亚南的小站!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-Sharp/">C Sharp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">16</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">基础</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px;">笔记</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">16</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/01/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/" class="title">分组查询与统计</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-01T13:31:00.000Z" itemprop="datePublished">2020-11-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/" class="title">最大最小平均值</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-01T12:04:00.000Z" itemprop="datePublished">2020-11-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/" class="title">数据库创建完整过程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-31T23:06:51.000Z" itemprop="datePublished">2020-11-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" class="title">数据库基本模糊查询</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-29T12:14:00.000Z" itemprop="datePublished">2020-10-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/" class="title">数据库键约束</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-29T10:44:46.000Z" itemprop="datePublished">2020-10-29</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-数据库创建完整过程" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库创建完整过程
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/" class="article-date">
+	  <time datetime="2020-10-31T23:06:51.000Z" itemprop="datePublished">2020-11-01</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/SQL-Server/">SQL Server</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">--指向当前要使用的数据库</span><br><span class="line">use master</span><br><span class="line">go</span><br><span class="line"></span><br><span class="line">--判断当前数据库是否存在</span><br><span class="line">if exists (select * from sysdatabases where name&#x3D;&#39;StudentManageDB&#39;)</span><br><span class="line">drop database StudentManageDB--删除数据库</span><br><span class="line">go</span><br><span class="line">--创建数据库</span><br><span class="line">create database StudentManageDB</span><br><span class="line">on primary</span><br><span class="line">(</span><br><span class="line">	--数据库文件的逻辑名</span><br><span class="line">    name&#x3D;&#39;StudentManageDB_data&#39;,</span><br><span class="line">    --数据库物理文件名（绝对路径）</span><br><span class="line">    filename&#x3D;&#39;D:\DB\StudentManageDB_data.mdf&#39;,</span><br><span class="line">    --数据库文件初始大小</span><br><span class="line">    size&#x3D;10MB,</span><br><span class="line">    --数据文件增长量</span><br><span class="line">    filegrowth&#x3D;1MB</span><br><span class="line">)</span><br><span class="line">--创建日志文件</span><br><span class="line">log on</span><br><span class="line">(</span><br><span class="line">    name&#x3D;&#39;StudentManageDB_log&#39;,</span><br><span class="line">    filename&#x3D;&#39;D:\DB\StudentManageDB_log.ldf&#39;,</span><br><span class="line">    size&#x3D;2MB,</span><br><span class="line">    filegrowth&#x3D;1MB</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建学员信息数据表</span><br><span class="line">use StudentManageDB</span><br><span class="line">go</span><br><span class="line">if exists (select * from sysobjects where name&#x3D;&#39;Students&#39;)</span><br><span class="line">drop table Students</span><br><span class="line">go</span><br><span class="line">create table Students</span><br><span class="line">(</span><br><span class="line">    StudentId int identity(100000,1) ,</span><br><span class="line">    StudentName varchar(20) not null,</span><br><span class="line">    Gender char(2)  not null,</span><br><span class="line">    Birthday datetime  not null,</span><br><span class="line">    StudentIdNo numeric(18,0) not null,--身份证号   </span><br><span class="line">    Age int not null,</span><br><span class="line">    PhoneNumber varchar(50),</span><br><span class="line">    StudentAddress varchar(500),</span><br><span class="line">    ClassId int not null  --班级外键</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建班级表</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;StudentClass&#39;)</span><br><span class="line">drop table StudentClass</span><br><span class="line">go</span><br><span class="line">create table StudentClass</span><br><span class="line">(</span><br><span class="line">	ClassId int primary key,</span><br><span class="line">    ClassName varchar(20) not null</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建成绩表</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;ScoreList&#39;)</span><br><span class="line">drop table ScoreList</span><br><span class="line">go</span><br><span class="line">create table ScoreList</span><br><span class="line">(</span><br><span class="line">    Id int identity(1,1) primary key,</span><br><span class="line">    StudentId int not null,</span><br><span class="line">    CSharp int null,</span><br><span class="line">    SQLServerDB int null,</span><br><span class="line">    UpdateTime datetime </span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建管理员用户表</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;Admins&#39;)</span><br><span class="line">drop table Admins</span><br><span class="line">create table Admins</span><br><span class="line">(</span><br><span class="line">	LoginId int identity(1000,1) primary key,</span><br><span class="line">    LoginPwd varchar(20) not null,</span><br><span class="line">    AdminName varchar(20) not null</span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line">--创建数据表的各种约束</span><br><span class="line">use StudentManageDB</span><br><span class="line">go</span><br><span class="line">--创建“主键”约束primary key</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;pk_StudentId&#39;)</span><br><span class="line">alter table Students drop constraint pk_StudentId</span><br><span class="line">alter table Students</span><br><span class="line">add constraint pk_StudentId primary key (StudentId)</span><br><span class="line"></span><br><span class="line">--创建检查约束check</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;ck_Age&#39;)</span><br><span class="line">alter table Students drop constraint ck_Age</span><br><span class="line">alter table Students</span><br><span class="line">add constraint ck_Age check (Age between 18 and 35) </span><br><span class="line"></span><br><span class="line">--创建唯一约束unique</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;uq_StudentIdNo&#39;)</span><br><span class="line">alter table Students drop constraint uq_StudentIdNo</span><br><span class="line">alter table Students</span><br><span class="line">add constraint uq_StudentIdNo unique (StudentIdNo)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--创建身份证的长度检查约束</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;ck_StudentIdNo&#39;)</span><br><span class="line">alter table Students drop constraint ck_StudentIdNo</span><br><span class="line">alter table Students</span><br><span class="line">add constraint ck_StudentIdNo check (len(StudentIdNo)&#x3D;18)</span><br><span class="line"></span><br><span class="line">--创建默认约束 </span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;df_StudentAddress&#39;)</span><br><span class="line">alter table Students drop constraint df_StudentAddress</span><br><span class="line">alter table Students </span><br><span class="line">add constraint df_StudentAddress default (&#39;地址不详&#39; ) for StudentAddress</span><br><span class="line"></span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;df_UpdateTime&#39;)</span><br><span class="line">alter table ScoreList drop constraint df_UpdateTime</span><br><span class="line">alter table ScoreList </span><br><span class="line">add constraint df_UpdateTime default (getdate() ) for UpdateTime</span><br><span class="line"></span><br><span class="line">--创建外键约束</span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;fk_classId&#39;)</span><br><span class="line">alter table Students drop constraint fk_classId</span><br><span class="line">alter table Students</span><br><span class="line">add constraint fk_classId foreign key (ClassId) references StudentClass(ClassId)</span><br><span class="line"></span><br><span class="line">if exists(select * from sysobjects where name&#x3D;&#39;fk_StudentId&#39;)</span><br><span class="line">alter table ScoreList drop constraint fk_StudentId</span><br><span class="line">alter table ScoreList</span><br><span class="line">add constraint fk_StudentId foreign key(StudentId) references Students(StudentId)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-------------------------------------------插入数据--------------------------------------</span><br><span class="line">use StudentManageDB</span><br><span class="line">go</span><br><span class="line"></span><br><span class="line">--插入班级数据</span><br><span class="line">insert into StudentClass(ClassId,ClassName) values(1,&#39;软件1班&#39;)</span><br><span class="line">insert into StudentClass(ClassId,ClassName) values(2,&#39;软件2班&#39;)</span><br><span class="line">insert into StudentClass(ClassId,ClassName) values(3,&#39;计算机1班&#39;)</span><br><span class="line">insert into StudentClass(ClassId,ClassName) values(4,&#39;计算机2班&#39;)</span><br><span class="line">--insert into StudentClass(ClassId,ClassName) values(5,&#39;网络1班&#39;)</span><br><span class="line">--insert into StudentClass(ClassId,ClassName) values(6,&#39;网络2班&#39;)</span><br><span class="line"></span><br><span class="line">--插入学员信息</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;王小虎&#39;,&#39;男&#39;,&#39;1989-08-07&#39;,22,120223198908071111,&#39;022-22222222&#39;,&#39;天津市南开区红磡公寓5-5-102&#39;,1)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;贺小张&#39;,&#39;女&#39;,&#39;1989-05-06&#39;,22,120223198905062426,&#39;022-33333333&#39;,&#39;天津市河北区王串场58号&#39;,2)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;马小李&#39;,&#39;男&#39;,&#39;1990-02-07&#39;,21,120223199002078915,&#39;022-44444444&#39;,&#39;天津市红桥区丁字沽曙光路79号&#39;,4)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;冯小强&#39;,&#39;女&#39;,&#39;1987-05-12&#39;,24,130223198705125167,&#39;022-55555555&#39;,default,2)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;杜小丽&#39;,&#39;女&#39;,&#39;1986-05-08&#39;,25,130223198605081528,&#39;022-66666666&#39;,&#39;河北衡水路北道69号&#39;,1)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;王俊桥&#39;,&#39;男&#39;,&#39;1987-07-18&#39;,24,130223198707182235,&#39;022-77777777&#39;,default,1)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;张永利&#39;,&#39;男&#39;,&#39;1988-09-28&#39;,24,130223198909282235,&#39;022-88888888&#39;,&#39;河北保定市风华道12号&#39;,3)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;李铭&#39;,&#39;男&#39;,&#39;1987-01-18&#39;,24,130223198701182257,&#39;022-99999999&#39;,&#39;河北邢台市幸福路5号&#39;,1)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;宁俊燕&#39;,&#39;女&#39;,&#39;1987-06-15&#39;,24,130223198706152211,&#39;022-11111111&#39;,default,3)</span><br><span class="line">insert into Students (StudentName,Gender,Birthday,Age,StudentIdNo,PhoneNumber,StudentAddress,ClassId)</span><br><span class="line">         values(&#39;刘玲玲&#39;,&#39;女&#39;,&#39;1989-08-19&#39;,24,130223198908192235,&#39;022-11111222&#39;,default,4)</span><br><span class="line">         </span><br><span class="line">            </span><br><span class="line">         </span><br><span class="line">--插入成绩信息</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100000,60,78)</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100001,55,88)</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100002,90,58)</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100003,88,75)</span><br><span class="line"></span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100004,62,88)</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100006,52,80)</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100007,91,66)</span><br><span class="line">insert into ScoreList (StudentId,CSharp,SQLServerDB)values(100009,78,35)</span><br><span class="line"></span><br><span class="line">--插入管理员信息</span><br><span class="line">insert into Admins (LoginPwd,AdminName) values(123456,&#39;王晓军&#39;)</span><br><span class="line">insert into Admins (LoginPwd,AdminName) values(123456,&#39;张明丽&#39;)</span><br><span class="line"></span><br><span class="line">--删除学员信息</span><br><span class="line">--delete from Students </span><br><span class="line"></span><br><span class="line">--truncate table Students --删除全部数据以后，自动标识列重新编号</span><br><span class="line"></span><br><span class="line">--显示学员信息和班级信息</span><br><span class="line">select * from Students</span><br><span class="line">select * from StudentClass</span><br><span class="line">select * from ScoreList</span><br><span class="line">select * from Admins</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://cyn51666.github.io/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/" title="数据库创建完整过程" target="_blank" rel="external">https://cyn51666.github.io/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://cyn51666.github.io/" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://cyn51666.github.io/" target="_blank"><span class="text-dark">陈亚南</span><small class="ml-1x"></small></a></h3>
+        <div>中国石油大学学生</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="uyan_frame"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/" title="最大最小平均值"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" title="数据库基本模糊查询"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cyn51666" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/6555705660/home" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://www.zhihu.com/people/cathy-77-60-51" target="_blank" title="Zhihu" data-toggle=tooltip data-placement=top><i class="icon icon-zhihu"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

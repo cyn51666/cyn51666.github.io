@@ -17,35 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>数据库基本模糊查询 | HEXO of YananChen</title>
-  <meta name="description" content="1. 查询过程与基本原理   查询与响应过程    理解查询  服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表 虚拟表是数据组合后的重新展示，而不是原始的物理数据     2. 查询实现过程分析 简单查询过程   3. 基本查询   查询一般有四个基本组成部分 查询内容 select StudentId,StudentName,Gender 查询对象 from Students">
+  <title>最大最小平均值 | HEXO of YananChen</title>
+  <meta name="description" content="聚合函数   对某一列求和，对满足条件的记录总数求和 select SUM(CSharp) as c#总成绩  from ScoreList select 总人数 &#x3D; COUNT（*） from Students   求最大，最小，平均值 select MAX(CSharp) as C#最高分,MIN(CSharp) as C#最低分 from ScoreList select AVG(CSha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库基本模糊查询">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/index.html">
+<meta property="og:title" content="最大最小平均值">
+<meta property="og:url" content="https://cyn51666.github.io/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 查询过程与基本原理   查询与响应过程    理解查询  服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表 虚拟表是数据组合后的重新展示，而不是原始的物理数据     2. 查询实现过程分析 简单查询过程   3. 基本查询   查询一般有四个基本组成部分 查询内容 select StudentId,StudentName,Gender 查询对象 from Students">
+<meta property="og:description" content="聚合函数   对某一列求和，对满足条件的记录总数求和 select SUM(CSharp) as c#总成绩  from ScoreList select 总人数 &#x3D; COUNT（*） from Students   求最大，最小，平均值 select MAX(CSharp) as C#最高分,MIN(CSharp) as C#最低分 from ScoreList select AVG(CSha">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203923.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030205752.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210430.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210903.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211447.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211547.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211735.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212538.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212604.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030213611.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214025.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214559.png">
-<meta property="article:published_time" content="2020-10-29T12:14:00.000Z">
-<meta property="article:modified_time" content="2020-10-30T13:46:36.212Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101204536.png">
+<meta property="article:published_time" content="2020-11-01T12:04:00.000Z">
+<meta property="article:modified_time" content="2020-11-01T12:45:52.753Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101204536.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -358,14 +346,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-数据库基本模糊查询" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-最大最小平均值" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      数据库基本模糊查询
+      最大最小平均值
     </h1>
   
 
@@ -373,8 +361,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" class="article-date">
-	  <time datetime="2020-10-29T12:14:00.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/" class="article-date">
+	  <time datetime="2020-11-01T12:04:00.000Z" itemprop="datePublished">2020-11-01</time>
 	</a>
 </span>
         
@@ -399,120 +387,24 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="1-查询过程与基本原理"><a class="markdownIt-Anchor" href="#1-查询过程与基本原理"></a> 1. 查询过程与基本原理</h2>
+        <h2 id="聚合函数"><a class="markdownIt-Anchor" href="#聚合函数"></a> 聚合函数</h2>
 <ol>
 <li>
-<p>查询与响应过程</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203320.png" alt="20201030203320" /></p>
+<p>对某一列求和，对满足条件的记录总数求和</p>
+<p>select SUM(CSharp) as c#总成绩  from ScoreList<br />
+select 总人数 = COUNT（*） from Students</p>
 </li>
 <li>
-<p>理解查询</p>
-<ol>
-<li>服务器执行命令，在原始数据表中查找符合条件的数据，产生一个虚拟表</li>
-<li>虚拟表是数据组合后的重新展示，而不是原始的物理数据</li>
-</ol>
-</li>
-</ol>
-<h2 id="2-查询实现过程分析"><a class="markdownIt-Anchor" href="#2-查询实现过程分析"></a> 2. 查询实现过程分析</h2>
-<p>简单查询过程</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030203923.png" alt="20201030203923" /></p>
-<h2 id="3-基本查询"><a class="markdownIt-Anchor" href="#3-基本查询"></a> 3. 基本查询</h2>
-<ol>
-<li>
-<p>查询一般有四个基本组成部分<br />
-查询内容 select StudentId,StudentName,Gender<br />
-查询对象 from Students<br />
-过滤条件 where Gender=‘男’<br />
-结果排序 order by StudentId DESC</p>
-</li>
-<li>
-<p>基本查询语法框架<br />
-select &lt;列名&gt;<br />
-from &lt;表名&gt;<br />
-[where &lt;查询条件表达式&gt;]<br />
-[order by &lt;排序的列名&gt;[ASC或DESC]]<br />
-注意：多个查询条件用and</p>
-</li>
-<li>
-<p>使用AS或使用=重新命名字段</p>
-<p>select StudentName as 姓名,Gender as 性别,出生年月=Birthday from Students where Gender = ‘男’</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030205752.png" alt="20201030205752" /></p>
-</li>
-<li>
-<p>加号的使用</p>
-<p>select StudentName,地址和电话=StudentAddress +’(’+ PhoneNumber + ‘)’ from Students where Gender = ‘男’</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210430.png" alt="20201030210430" /></p>
-</li>
-<li>
-<p>查询空列</p>
-<p>insert into ScoreList(StudentId,CSharp)values(100009,78)<br />
-select *from ScoreList where SQLServerDB is null</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030210903.png" alt="20201030210903" /></p>
-</li>
-<li>
-<p>使用常量列</p>
-<p>select Studentname,Gender,所在学校=‘天津大学’ from Students where Gender = ‘男’ and Age &gt;= 24</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211447.png" alt="20201030211447" /></p>
-</li>
-<li>
-<p>限制固定行数</p>
-<p>select top 5 StudentName,Gender,Birthday from Students</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211547.png" alt="20201030211547" /></p>
-</li>
-<li>
-<p>返回百分之多少行</p>
-<p>select top 20 percent StudentName,Gender,Birthday from Students</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030211735.png" alt="20201030211735" /></p>
-</li>
-<li>
-<p>升序排列</p>
-<p>select StudentId,(CSharp+5) as C#,DB = SQLServerDB<br />
-from ScoreList where (CSharp+5) &gt; 90<br />
-order by CSharp ASC</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212538.png" alt="20201030212538" /></p>
-</li>
-<li>
-<p>降序排列</p>
-<p>select StudentId,(CSharp+5) as C#,DB = SQLServerDB<br />
-from ScoreList where (CSharp+5) &gt; 90<br />
-order by CSharp DESC,SQLServerDB ASC</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030212604.png" alt="20201030212604" /></p>
-</li>
-</ol>
-<h2 id="4-模糊查询"><a class="markdownIt-Anchor" href="#4-模糊查询"></a> 4. 模糊查询</h2>
-<ol>
-<li>
-<p>模糊查询LIKE</p>
-<p>使用LIKE查询时，字段中的内容不一定与查询内容完全匹配，只要字段中包含这些内容即可</p>
-<p>select StudentName,StudentAddress from Students<br />
-where StudentAddress like ‘天津%’</p>
-<p>select StudentName,StudentAddress from Students<br />
-where StudentAddress like ‘%小%’</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030213611.png" alt="20201030213611" /></p>
-</li>
-<li>
-<p>模糊查询between</p>
-<p>把某一字段中的值限定在特定范围内的记录查询出来</p>
-<p>select *from ScoreList<br />
-where CSharp between 80 and 90</p>
-<p>select StudentName,Birthday from Students<br />
-where Birthday between ‘1987-1-1’ and ‘1988-1-1’</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214025.png" alt="20201030214025" /></p>
-</li>
-<li>
-<p>模糊查询in</p>
-<p>把某一个字段中的内容与所列出的查询内容列表匹配的记录查询出来</p>
-<p>select StudentName,Birthday,Age from Students<br />
-where Age in (21,22,23)</p>
-<p>select StudentName,Birthday,Age from Students<br />
-where StudentName in (‘小李’，‘小王’，‘小华’)</p>
-<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201030214559.png" alt="20201030214559" /></p>
+<p>求最大，最小，平均值</p>
+<p>select MAX(CSharp) as C#最高分,MIN(CSharp) as C#最低分 from ScoreList<br />
+select AVG(CSharp) as C#平均分,AVG(SqlServerDB) as DB平均分, from ScoreList<br />
+<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101204536.png" alt="20201101204536" /></p>
 </li>
 </ol>
 
@@ -524,7 +416,7 @@ where StudentName in (‘小李’，‘小王’，‘小华’)</p>
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" title="数据库基本模糊查询" target="_blank" rel="external">https://cyn51666.github.io/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/</a>
+      <a href="https://cyn51666.github.io/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/" title="最大最小平均值" target="_blank" rel="external">https://cyn51666.github.io/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -571,12 +463,12 @@ where StudentName in (‘小李’，‘小王’，‘小华’)</p>
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/" title="数据库创建完整过程"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/11/01/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/" title="分组查询与统计"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/" title="数据库键约束"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/" title="数据库创建完整过程"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
