@@ -17,21 +17,31 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>C Sharp对象职责明确原则 | HEXO of YananChen</title>
-  <meta name="description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+  <title>数据库设计原则 | HEXO of YananChen</title>
+  <meta name="description" content="1. 数据库设计合理性检验   2. 数据库三范式原则 范式：最小冗余的表结构 范式类型： 第一范式 第二范式 第三范式 应用三范式原则，保证各个数据表结构设计的合理性  3. 第一范式（1st NF） 第一范式：目标是确保每列的原子性（即不可再分的最小数据单元） 第一范式一般都能满足 常见的第一范式不满足的情况：地址，姓名（有时分开写）   4. 第二范式（2st NF） 第二范式：要求每个表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C Sharp对象职责明确原则">
-<meta property="og:url" content="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/index.html">
+<meta property="og:title" content="数据库设计原则">
+<meta property="og:url" content="https://cyn51666.github.io/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前后台代码混编的缺点  程序编写人员必须非常实习后台数据的设计 业务逻辑复杂时很难查找错误且不利于后期维护 不符合面向对象的设计思想      问题解决  将数据展示代码和数据访问代码分离 根据当前需要访问的后台实体，创建一个对应的数据访问类 将对该实体操作的方法封装到对应的访问类中">
+<meta property="og:description" content="1. 数据库设计合理性检验   2. 数据库三范式原则 范式：最小冗余的表结构 范式类型： 第一范式 第二范式 第三范式 应用三范式原则，保证各个数据表结构设计的合理性  3. 第一范式（1st NF） 第一范式：目标是确保每列的原子性（即不可再分的最小数据单元） 第一范式一般都能满足 常见的第一范式不满足的情况：地址，姓名（有时分开写）   4. 第二范式（2st NF） 第二范式：要求每个表">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-12T12:48:47.000Z">
-<meta property="article:modified_time" content="2020-10-13T00:27:10.922Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102183523.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184207.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184414.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184917.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102185111.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191357.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191422.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191448.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191622.png">
+<meta property="article:published_time" content="2020-11-02T11:29:00.000Z">
+<meta property="article:modified_time" content="2020-11-02T11:30:52.239Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102183523.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/index.html">
+  <link rel="canonical" href="https://cyn51666.github.io/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -215,7 +225,7 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-Sharp/">C Sharp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSharp/">CSharp</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL-Server/">SQL Server</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -225,7 +235,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">16</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a><span class="tag-list-count">18</span></li></ul>
     </div>
   </div>
 
@@ -244,7 +254,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">16</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">16</span></li></ul>
     </div>
   </div>
 
@@ -260,13 +270,58 @@
             
             <div class="item-inner">
               <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/02/VS%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-02T13:44:55.076Z" itemprop="datePublished">2020-11-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
                 <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
               </p>
               <p class="item-title">
-                <a href="/2020/11/01/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/" class="title">分组查询与统计</a>
+                <a href="/2020/11/02/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/" class="title">分组查询与统计</a>
               </p>
               <p class="item-date">
-                <time datetime="2020-11-01T13:31:00.000Z" itemprop="datePublished">2020-11-01</time>
+                <time datetime="2020-11-02T13:31:00.000Z" itemprop="datePublished">2020-11-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/02/ADO.NET%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/" class="title">ADO.NET与数据库连接</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-02T11:31:00.000Z" itemprop="datePublished">2020-11-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/" class="title">数据库设计原则</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-02T11:29:00.000Z" itemprop="datePublished">2020-11-02</time>
               </p>
             </div>
           </li>
@@ -286,51 +341,6 @@
             </div>
           </li>
           
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/11/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E5%AE%8C%E6%95%B4%E8%BF%87%E7%A8%8B/" class="title">数据库创建完整过程</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-10-31T23:06:51.000Z" itemprop="datePublished">2020-11-01</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2/" class="title">数据库基本模糊查询</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-10-29T12:14:00.000Z" itemprop="datePublished">2020-10-29</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/SQL-Server/">SQL Server</a>
-              </p>
-              <p class="item-title">
-                <a href="/2020/10/29/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%AE%E7%BA%A6%E6%9D%9F/" class="title">数据库键约束</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2020-10-29T10:44:46.000Z" itemprop="datePublished">2020-10-29</time>
-              </p>
-            </div>
-          </li>
-          
       </ul>
     </div>
   </div>
@@ -344,14 +354,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-C Sharp职责明确原则" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-数据库设计的原则" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      C Sharp对象职责明确原则
+      数据库设计原则
     </h1>
   
 
@@ -359,14 +369,14 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" class="article-date">
-	  <time datetime="2020-10-12T12:48:47.000Z" itemprop="datePublished">2020-10-12</time>
+	<a href="/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/" class="article-date">
+	  <time datetime="2020-11-02T11:29:00.000Z" itemprop="datePublished">2020-11-02</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/C-Sharp/">C Sharp</a>
+    <a class="article-category-link" href="/categories/SQL-Server/">SQL Server</a>
   </span>
 
         
@@ -385,31 +395,67 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <ol>
-<li>前后台代码混编的缺点
+        <h2 id="1-数据库设计合理性检验"><a class="markdownIt-Anchor" href="#1-数据库设计合理性检验"></a> 1. 数据库设计合理性检验</h2>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102183523.png" alt="20201102183523" /></p>
+<h2 id="2-数据库三范式原则"><a class="markdownIt-Anchor" href="#2-数据库三范式原则"></a> 2. 数据库三范式原则</h2>
+<p>范式：最小冗余的表结构<br />
+范式类型：<br />
+第一范式<br />
+第二范式<br />
+第三范式<br />
+应用三范式原则，保证各个数据表结构设计的合理性</p>
+<h2 id="3-第一范式1st-nf"><a class="markdownIt-Anchor" href="#3-第一范式1st-nf"></a> 3. 第一范式（1st NF）</h2>
+<p>第一范式：目标是确保每列的原子性（即不可再分的最小数据单元）<br />
+第一范式一般都能满足<br />
+常见的第一范式不满足的情况：地址，姓名（有时分开写）<br />
+<img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184207.png" alt="20201102184207" /></p>
+<h2 id="4-第二范式2st-nf"><a class="markdownIt-Anchor" href="#4-第二范式2st-nf"></a> 4. 第二范式（2st NF）</h2>
+<p>第二范式：要求每个表只描述一种实体的属性<br />
+满足条件：如果一个关系满足一范式，并且除了主键以外的其他列，都和主键想关，则满足第二范式<br />
+应用第二范式将与主键不相关的列独立为单独的实体</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184414.png" alt="20201102184414" /></p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184917.png" alt="20201102184917" /></p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102185111.png" alt="20201102185111" /></p>
+<h2 id="5-第三范式"><a class="markdownIt-Anchor" href="#5-第三范式"></a> 5. 第三范式</h2>
+<p>第三范式：要求每种实体各属性之间不能具有直接的依赖关系<br />
+满足条件：如果一个关系满足二范式，除主键之外，其他列之间都不具有直接的依赖关系，则满足第三范式</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191357.png" alt="20201102191357" /></p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191422.png" alt="20201102191422" /></p>
+<h2 id="6-数据库模型设计"><a class="markdownIt-Anchor" href="#6-数据库模型设计"></a> 6. 数据库模型设计</h2>
+<p>规范后使用VISO软件创建数据模型</p>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191448.png" alt="20201102191448" /></p>
+<h2 id="7-三范式与数据库的性能"><a class="markdownIt-Anchor" href="#7-三范式与数据库的性能"></a> 7. 三范式与数据库的性能</h2>
 <ol>
-<li>程序编写人员必须非常实习后台数据的设计</li>
-<li>业务逻辑复杂时很难查找错误且不利于后期维护</li>
-<li>不符合面向对象的设计思想</li>
+<li>
+<p>第三范式的应用后数据库的变化</p>
+<ol>
+<li>使得实体被最大限度地分割成若干个小实体</li>
+<li>实体增多，同类实体之间关系变得复杂，数据分布在多个表中</li>
+<li>数据查询和统计将变得复杂，多表连接查询会适当降低查询的性能</li>
+</ol>
+</li>
+<li>
+<p>为满足某种商业目标，数据库性能比规范数据库更重要</p>
+<ol>
+<li>在给定的表中添加额外的字段，可大量减少需要从中搜索信息所需时间</li>
+<li>比如，在高考成绩表中插入“成绩总分”列（该列其实冗余），以方便查询</li>
+</ol>
+</li>
+<li>
+<p>进行规范化的同时，还需要综合考虑数据库的性能</p>
+<ol>
+<li>三范式与数据库性能要根据实际要求权衡</li>
+<li>根据实际需要增加或减少冗余列</li>
 </ol>
 </li>
 </ol>
-<hr />
-<ol start="2">
-<li>问题解决
-<ol>
-<li>将数据展示代码和数据访问代码分离</li>
-<li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li>
-<li>将对该实体操作的方法封装到对应的访问类中</li>
-</ol>
-</li>
-</ol>
+<p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191622.png" alt="20201102191622" /></p>
 
       
     </div>
@@ -419,7 +465,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/" title="C Sharp对象职责明确原则" target="_blank" rel="external">https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/</a>
+      <a href="https://cyn51666.github.io/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/" title="数据库设计原则" target="_blank" rel="external">https://cyn51666.github.io/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -466,12 +512,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="C Sharp实体类在开发中的应用"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2020/11/02/ADO.NET%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/" title="ADO.NET与数据库连接"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2020/10/12/C%20Sharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/" title="C Sharp方法参数过多的缺点"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2020/11/01/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E5%B9%B3%E5%9D%87%E5%80%BC/" title="最大最小平均值"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

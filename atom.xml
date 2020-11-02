@@ -6,7 +6,7 @@
   <link href="https://cyn51666.github.io/atom.xml" rel="self"/>
   
   <link href="https://cyn51666.github.io/"/>
-  <updated>2020-11-01T13:45:30.070Z</updated>
+  <updated>2020-11-02T13:44:59.251Z</updated>
   <id>https://cyn51666.github.io/</id>
   
   <author>
@@ -17,22 +17,88 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://cyn51666.github.io/2020/11/02/VS%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9/"/>
+    <id>https://cyn51666.github.io/2020/11/02/VS%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9/</id>
+    <published>2020-11-02T13:44:55.076Z</published>
+    <updated>2020-11-02T13:44:59.251Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>分组查询与统计</title>
-    <link href="https://cyn51666.github.io/2020/11/01/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/"/>
-    <id>https://cyn51666.github.io/2020/11/01/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/</id>
-    <published>2020-11-01T13:31:00.000Z</published>
-    <updated>2020-11-01T13:45:30.070Z</updated>
+    <link href="https://cyn51666.github.io/2020/11/02/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/"/>
+    <id>https://cyn51666.github.io/2020/11/02/%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2%E4%B8%8E%E7%BB%9F%E8%AE%A1/</id>
+    <published>2020-11-02T13:31:00.000Z</published>
+    <updated>2020-11-02T10:33:24.839Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="使用group-by分组"><a class="markdownIt-Anchor" href="#使用group-by分组"></a> 使用Group By分组</h2><ol><li><p>分组汇总原理分析</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101213539.png" alt="20201101213539" /></p></li><li><p>空不参与查询</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101214104.png" alt="20201101214104" /></p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="1-使用group-by分组"><a class="markdownIt-Anchor" href="#1-使用group-by分组"></a> 1. 使用Group By分组</h2><ol><li><p>分组汇总原理分析</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101213539.png" alt="20201101213539" /></p></li><li><p>空不参与查询</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101214104.png" alt="20201101214104" /></p></li></ol><h2 id="2-分组统计筛选使用having筛选分组结果"><a class="markdownIt-Anchor" href="#2-分组统计筛选使用having筛选分组结果"></a> 2. 分组统计筛选–使用having筛选分组结果</h2><ol><li><p>使用having筛选分组后的统计结果</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102162536.png" alt="20201102162536" /></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">select 班级名称 &#x3D; StudentClass.ClassName,C#平均分&#x3D;avg(CSharp),DB平均分&#x3D;avg(SQLServerDB) from Students</span><br><span class="line">inner join ScoreList on Students.StudentId&#x3D;ScoreList.StudentId  </span><br><span class="line">inner join StudentClass on StudentClass.ClassId&#x3D;Students.ClassId</span><br><span class="line">group by ClassName</span><br><span class="line">having avg(CSharp)&gt;70 and avg(SQLServerDB)&gt;&#x3D;70</span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ol><h2 id="3-重复数据查询"><a class="markdownIt-Anchor" href="#3-重复数据查询"></a> 3. 重复数据查询</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102164334.png" alt="20201102164334" /></p><p>在知道哪个数据重复的情况</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">--在知道哪个字段重复的情况下</span><br><span class="line">select StudentId from ScoreList group by StudentId having count(*)&gt;1</span><br><span class="line"></span><br><span class="line">--查询所有重复的记录</span><br><span class="line">--在知道那个字段重复的情况</span><br><span class="line">select StudentId from ScoreList  group by StudentId having COUNT(*)&gt;1</span><br><span class="line"></span><br><span class="line">--查询所有重复的记录</span><br><span class="line">select * from ScoreList</span><br><span class="line">where StudentId in(select StudentId from ScoreList  group by StudentId having COUNT(*)&gt;1)</span><br><span class="line">order by StudentId</span><br><span class="line"></span><br><span class="line">--其他方法</span><br><span class="line">select * from ScoreList</span><br><span class="line">where (select COUNT(*) from ScoreList  s where s.StudentId&#x3D;ScoreList.StudentId)&gt;1</span><br><span class="line">order by StudentId</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;使用group-by分组&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#使用group-by分组&quot;&gt;&lt;/a&gt; 使用Group By分组&lt;/h2&gt;
+    <summary type="html">&lt;h2 id=&quot;1-使用group-by分组&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-使用group-by分组&quot;&gt;&lt;/a&gt; 1. 使用Group By分组&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;分组汇总原理分析&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https:</summary>
+&lt;p&gt;&lt;img src=</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ADO.NET与数据库连接</title>
+    <link href="https://cyn51666.github.io/2020/11/02/ADO.NET%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/"/>
+    <id>https://cyn51666.github.io/2020/11/02/ADO.NET%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5/</id>
+    <published>2020-11-02T11:31:00.000Z</published>
+    <updated>2020-11-02T13:44:04.596Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-mis系统部署方案"><a class="markdownIt-Anchor" href="#1-mis系统部署方案"></a> 1. MIS系统部署方案</h2><ol><li>完整的应用程序包括客户端和数据库服务端</li><li>理解ADONET<ol><li>ActiveX Data Objects(ADO)</li><li>是.NET平台下应用程序和数据源进行交互的一组面向对象的类库</li><li>简单理解：即数据访问组件</li></ol></li></ol><h2 id="2-adonet主要组件"><a class="markdownIt-Anchor" href="#2-adonet主要组件"></a> 2. ADONET主要组件</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102194150.png" alt="20201102194150" /></p><h2 id="net数据提供程序类型"><a class="markdownIt-Anchor" href="#net数据提供程序类型"></a> NET数据提供程序类型</h2><ol><li><p>NET Framework数据提供程序</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102200038.png" alt="20201102200038" /></p></li><li><p>第三方提供的数据提供程序：MySql.NET数据提供程序</p></li></ol><h2 id="3-如何正确的连接数据库"><a class="markdownIt-Anchor" href="#3-如何正确的连接数据库"></a> 3. 如何正确的连接数据库</h2><ol><li><p>需要四个条件</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102203858.png" alt="20201102203858" /></p></li><li><p>账号的使用</p><ol><li>sa账号拥有访问数据的所有权限，学习和开发测试阶段使用</li><li>在后续中还会专门学习其他账号创建与授权方法</li></ol></li></ol><h2 id="4-connection对象"><a class="markdownIt-Anchor" href="#4-connection对象"></a> 4. Connection对象</h2><ol><li><p>作用：建立应用程序和数据库点对点连接<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102204106.png" alt="20201102204106" /></p></li><li><p>属性：ConnectionString（连接字符串）</p><ol><li><p>封装连接数据库的四个条件<br />Server=服务器名或IP地址;DataBase=数据库名称;User ID=登录账号;Password=登录密码</p></li><li><p>使用SQLServer用户验证登陆的字符串示例（经常使用）<br />Server=192.168.1.2(服务器名或IP地址);DataBase=数据库名称;Uid=登录账号;Pwd=登录密码</p></li><li><p>使用Windows集成验证登陆的字符串示例（仅限于本机）<br />Data Source=.;Intinal Catalog=StudentManageDB;Integrated Security=Ture</p></li></ol></li><li><p>方法：</p><p>Open();  打开连接</p><p>Close();  关闭连接</p></li><li><p>测试</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;引入命名空间</span><br><span class="line">using System.Data</span><br><span class="line">using System.Data.SqlClien</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;定义连接字符串</span><br><span class="line">string connstring &#x3D; &quot;serevr&#x3D;.;DataBase&#x3D;StudentManageDB;Uid&#x3D;sa;Pwd&#x3D;314159&quot;;</span><br><span class="line">&#x2F;&#x2F;创建链接对象</span><br><span class="line">SqlConnection conn &#x3D;new SqlConnection (connString);</span><br><span class="line">&#x2F;&#x2F;打开连接</span><br><span class="line">conn.open();</span><br><span class="line">&#x2F;&#x2F;判断连接是否打开</span><br><span class="line">if(conn.state&#x3D;&#x3D;ConnectionState.Open)</span><br><span class="line">Console.WriteLine(&quot;conn is open&quot;);</span><br><span class="line">&#x2F;&#x2F;关闭连接</span><br><span class="line">conn.close();</span><br><span class="line">&#x2F;&#x2F;判断连接是否关闭</span><br><span class="line">if(conn.state&#x3D;&#x3D;ConnectionState.Closed)</span><br><span class="line">Console.WriteLine(&quot;conn is Closed&quot;);</span><br><span class="line">Console.ReadLine();</span><br><span class="line"></span><br></pre></td></tr></table></figure><ol start="5"><li>连接字符串的特别说明<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102210745.png" alt="20201102210745" /></li></ol><h2 id="5-command对象"><a class="markdownIt-Anchor" href="#5-command对象"></a> 5. Command对象</h2><ol><li><p>作用：向数据库发送sql语句</p><p>封装连接对象和要执行的sql语句</p><p>对数据库执行及具体的操作，提供增，删，查，改的方法</p></li><li><p>属性</p><p>CommandText：需要封装的sql语句或者存储过程名称</p><p>Connection：Command对象使用的数据库连接对象</p></li><li><p>方法</p><p>ExecuteNonQuery();执行增删改操作</p><p>ExecuteScalar();返回单一的查询结果</p><p>ExecuteReader();返回只读数据列表的查询</p></li><li><p>ExecuteNonQuery()方法使用要点</p><p>执行insert,update,delete类型语句<br />执行后返回受影响的行数，一般是大于0的数，等于0说明没有影响，-1表示出错</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-mis系统部署方案&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-mis系统部署方案&quot;&gt;&lt;/a&gt; 1. MIS系统部署方案&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;完整的应用程序包括客户端和数据库服务端&lt;/li&gt;
+&lt;li&gt;理解ADONET
+</summary>
+      
+    
+    
+    
+    <category term="SQL Server" scheme="https://cyn51666.github.io/categories/SQL-Server/"/>
+    
+    
+    <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库设计原则</title>
+    <link href="https://cyn51666.github.io/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/"/>
+    <id>https://cyn51666.github.io/2020/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8E%9F%E5%88%99/</id>
+    <published>2020-11-02T11:29:00.000Z</published>
+    <updated>2020-11-02T11:30:52.239Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-数据库设计合理性检验"><a class="markdownIt-Anchor" href="#1-数据库设计合理性检验"></a> 1. 数据库设计合理性检验</h2><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102183523.png" alt="20201102183523" /></p><h2 id="2-数据库三范式原则"><a class="markdownIt-Anchor" href="#2-数据库三范式原则"></a> 2. 数据库三范式原则</h2><p>范式：最小冗余的表结构<br />范式类型：<br />第一范式<br />第二范式<br />第三范式<br />应用三范式原则，保证各个数据表结构设计的合理性</p><h2 id="3-第一范式1st-nf"><a class="markdownIt-Anchor" href="#3-第一范式1st-nf"></a> 3. 第一范式（1st NF）</h2><p>第一范式：目标是确保每列的原子性（即不可再分的最小数据单元）<br />第一范式一般都能满足<br />常见的第一范式不满足的情况：地址，姓名（有时分开写）<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184207.png" alt="20201102184207" /></p><h2 id="4-第二范式2st-nf"><a class="markdownIt-Anchor" href="#4-第二范式2st-nf"></a> 4. 第二范式（2st NF）</h2><p>第二范式：要求每个表只描述一种实体的属性<br />满足条件：如果一个关系满足一范式，并且除了主键以外的其他列，都和主键想关，则满足第二范式<br />应用第二范式将与主键不相关的列独立为单独的实体</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184414.png" alt="20201102184414" /></p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102184917.png" alt="20201102184917" /></p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102185111.png" alt="20201102185111" /></p><h2 id="5-第三范式"><a class="markdownIt-Anchor" href="#5-第三范式"></a> 5. 第三范式</h2><p>第三范式：要求每种实体各属性之间不能具有直接的依赖关系<br />满足条件：如果一个关系满足二范式，除主键之外，其他列之间都不具有直接的依赖关系，则满足第三范式</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191357.png" alt="20201102191357" /></p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191422.png" alt="20201102191422" /></p><h2 id="6-数据库模型设计"><a class="markdownIt-Anchor" href="#6-数据库模型设计"></a> 6. 数据库模型设计</h2><p>规范后使用VISO软件创建数据模型</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191448.png" alt="20201102191448" /></p><h2 id="7-三范式与数据库的性能"><a class="markdownIt-Anchor" href="#7-三范式与数据库的性能"></a> 7. 三范式与数据库的性能</h2><ol><li><p>第三范式的应用后数据库的变化</p><ol><li>使得实体被最大限度地分割成若干个小实体</li><li>实体增多，同类实体之间关系变得复杂，数据分布在多个表中</li><li>数据查询和统计将变得复杂，多表连接查询会适当降低查询的性能</li></ol></li><li><p>为满足某种商业目标，数据库性能比规范数据库更重要</p><ol><li>在给定的表中添加额外的字段，可大量减少需要从中搜索信息所需时间</li><li>比如，在高考成绩表中插入“成绩总分”列（该列其实冗余），以方便查询</li></ol></li><li><p>进行规范化的同时，还需要综合考虑数据库的性能</p><ol><li>三范式与数据库性能要根据实际要求权衡</li><li>根据实际需要增加或减少冗余列</li></ol></li></ol><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201102191622.png" alt="20201102191622" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-数据库设计合理性检验&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-数据库设计合理性检验&quot;&gt;&lt;/a&gt; 1. 数据库设计合理性检验&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.c</summary>
       
     
     
@@ -262,7 +328,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     <link href="https://cyn51666.github.io/2020/10/29/%E5%A4%9A%E8%A1%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/"/>
     <id>https://cyn51666.github.io/2020/10/29/%E5%A4%9A%E8%A1%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/</id>
     <published>2020-10-28T19:00:51.000Z</published>
-    <updated>2020-11-01T13:30:47.991Z</updated>
+    <updated>2020-11-02T13:35:18.286Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-内连接查询"><a class="markdownIt-Anchor" href="#1-内连接查询"></a> 1. 内连接查询</h2><ol><li><p>内连接（inner join …on…）查询<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101204946.png" alt="20201101204946" /></p></li><li><p>测试</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101211052.png" alt="20201101211052" /></p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select Students.StudentId,C#成绩&#x3D;CSharp,StudentName from ScoreList </span><br><span class="line">inner join Students on Students.StudentId &#x3D; Scorelist.StudentId</span><br><span class="line">where CSharp &gt; 80</span><br><span class="line">go </span><br></pre></td></tr></table></figure></li></ol><h2 id="2-左外连接查询"><a class="markdownIt-Anchor" href="#2-左外连接查询"></a> 2. 左外连接查询</h2><ol><li><p>左外连接（left outer join …on…）</p><p><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101211753.png" alt="20201101211753" /></p></li><li><p>测试</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select Students.StudentId,StudentName,Gender,CSharp from ScoreList  </span><br><span class="line">left outer join Students on Students.StudentId&#x3D;ScoreList.Student.Id</span><br><span class="line">where Gender&#x3D;&#39;男&#39;</span><br></pre></td></tr></table></figure></li></ol><h2 id="3-右外连接"><a class="markdownIt-Anchor" href="#3-右外连接"></a> 3. 右外连接</h2><ol><li><p>右外连接（right outer join…on…）查询<br /><img src="https://raw.githubusercontent.com/cyn51666/Blog-images/master/20201101212540.png" alt="20201101212540" /></p></li><li><p>测试</p><pre class="highlight"><code class="">insert into StudentClass(ClassId,ClassName)values(5,'计算机5班')  select Students.StudentId,StidentName,CSharpfrom Studentsright outer join StudentClass on Students.ClassId=StudentClass.ClassId</code></pre></li></ol>]]></content>
     
@@ -362,11 +428,11 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
   </entry>
   
   <entry>
-    <title>C Sharp实体类在开发中的应用</title>
-    <link href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>https://cyn51666.github.io/2020/10/12/C%20Sharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
+    <title>CSharp实体类在开发中的应用</title>
+    <link href="https://cyn51666.github.io/2020/10/12/CSharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+    <id>https://cyn51666.github.io/2020/10/12/CSharp%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</id>
     <published>2020-10-12T12:48:48.000Z</published>
-    <updated>2020-10-13T00:29:13.795Z</updated>
+    <updated>2020-11-02T08:19:16.398Z</updated>
     
     <content type="html"><![CDATA[<ol><li>前后台代码混编的缺点<ol><li>程序编写人员必须非常实习后台数据的设计</li><li>业务逻辑复杂时很难查找错误且不利于后期维护</li><li>不符合面向对象的设计思想</li></ol></li></ol><hr /><ol start="2"><li>问题解决<ol><li>将数据展示代码和数据访问代码分离</li><li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li><li>将对该实体操作的方法封装到对应的访问类中</li></ol></li></ol>]]></content>
     
@@ -388,7 +454,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="C Sharp" scheme="https://cyn51666.github.io/categories/C-Sharp/"/>
+    <category term="CSharp" scheme="https://cyn51666.github.io/categories/CSharp/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -396,11 +462,11 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
   </entry>
   
   <entry>
-    <title>C Sharp对象职责明确原则</title>
-    <link href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/"/>
-    <id>https://cyn51666.github.io/2020/10/12/C%20Sharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/</id>
+    <title>CSharp对象职责明确原则</title>
+    <link href="https://cyn51666.github.io/2020/10/12/CSharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/"/>
+    <id>https://cyn51666.github.io/2020/10/12/CSharp%E8%81%8C%E8%B4%A3%E6%98%8E%E7%A1%AE%E5%8E%9F%E5%88%99/</id>
     <published>2020-10-12T12:48:47.000Z</published>
-    <updated>2020-10-13T00:27:10.922Z</updated>
+    <updated>2020-11-02T08:18:51.076Z</updated>
     
     <content type="html"><![CDATA[<ol><li>前后台代码混编的缺点<ol><li>程序编写人员必须非常实习后台数据的设计</li><li>业务逻辑复杂时很难查找错误且不利于后期维护</li><li>不符合面向对象的设计思想</li></ol></li></ol><hr /><ol start="2"><li>问题解决<ol><li>将数据展示代码和数据访问代码分离</li><li>根据当前需要访问的后台实体，创建一个对应的数据访问类</li><li>将对该实体操作的方法封装到对应的访问类中</li></ol></li></ol>]]></content>
     
@@ -422,7 +488,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="C Sharp" scheme="https://cyn51666.github.io/categories/C-Sharp/"/>
+    <category term="CSharp" scheme="https://cyn51666.github.io/categories/CSharp/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -430,11 +496,11 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
   </entry>
   
   <entry>
-    <title>C Sharp方法参数过多的缺点</title>
-    <link href="https://cyn51666.github.io/2020/10/12/C%20Sharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/"/>
-    <id>https://cyn51666.github.io/2020/10/12/C%20Sharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/</id>
+    <title>CSharp方法参数过多的缺点</title>
+    <link href="https://cyn51666.github.io/2020/10/12/CSharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/"/>
+    <id>https://cyn51666.github.io/2020/10/12/CSharp%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E8%BF%87%E5%A4%9A%E7%9A%84%E7%BC%BA%E7%82%B9/</id>
     <published>2020-10-12T12:48:46.000Z</published>
-    <updated>2020-10-13T00:19:54.553Z</updated>
+    <updated>2020-11-02T08:18:34.779Z</updated>
     
     <content type="html"><![CDATA[<ol><li>方法参数过多的缺点<ol><li>定义和使用不方便，很容易把参数写错</li><li>当对象的属性变化时，方法的参数必须改变</li><li>参数的改变，造成对象接口不稳定，降低了可维护性，可扩展性和安全性，与面向对象原则相悖</li><li>方法参数多，不符合面向对象的低耦合，高内聚的要求</li><li>后台方法的编写依赖数据库的完成</li><li>前台代码实现依赖后台方法的完成，团队中无法并行开发</li></ol></li></ol><hr /><ol start="2"><li>问题思路与解决<ol><li>为类的设计提供一个规范，稳定对象的接口</li><li>不同开发人员只需要按照规范接口即可同步开发</li></ol></li></ol><hr /><ol start="3"><li>问题解决办法<ol><li>使用“实体类”作为方法参数，稳定对外接口</li></ol></li></ol>]]></content>
     
@@ -452,7 +518,7 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     
-    <category term="C Sharp" scheme="https://cyn51666.github.io/categories/C-Sharp/"/>
+    <category term="CSharp" scheme="https://cyn51666.github.io/categories/CSharp/"/>
     
     
     <category term="笔记" scheme="https://cyn51666.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
@@ -488,54 +554,6 @@ insert [into] &amp;lt;表名&amp;gt; v</summary>
     
     
     <category term="基础" scheme="https://cyn51666.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>再别康桥1</title>
-    <link href="https://cyn51666.github.io/2020/10/11/%E5%86%8D%E5%88%AB%E5%BA%B7%E6%A1%A51/"/>
-    <id>https://cyn51666.github.io/2020/10/11/%E5%86%8D%E5%88%AB%E5%BA%B7%E6%A1%A51/</id>
-    <published>2020-10-11T04:26:46.000Z</published>
-    <updated>2020-10-12T07:50:21.306Z</updated>
-    
-    <content type="html"><![CDATA[<p>轻轻的我走了，<br />正如我轻轻的来；<br />我轻轻的招手，<br />作别西天的云彩。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;轻轻的我走了，&lt;br /&gt;
-正如我轻轻的来；&lt;br /&gt;
-我轻轻的招手，&lt;br /&gt;
-作别西天的云彩。&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="hexo" scheme="https://cyn51666.github.io/categories/hexo/"/>
-    
-    
-    <category term="基础" scheme="https://cyn51666.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://cyn51666.github.io/2020/10/11/hello-world/"/>
-    <id>https://cyn51666.github.io/2020/10/11/hello-world/</id>
-    <published>2020-10-11T04:23:51.777Z</published>
-    <updated>2020-10-11T04:23:51.777Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
